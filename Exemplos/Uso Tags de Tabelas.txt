@@ -1,0 +1,28 @@
+<!DOCTYPE html> <!-- Padrao do HTML5 -->
+<html>
+<head>
+	<meta charset="utf-8"> <!-- Utilizado para aceitar caracteres -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Curso Front-End - WEBDESIGNER</title>
+</head>
+<body>
+	<table width="900" align="center" border="1"> <!-- TAG PARA USO DE TABELAS -->
+		<tr>
+			<td>Nome</td>
+			<td>Idade</td>
+			<td>Cargo</td>
+		</tr>
+		<tr>
+			<td>Emerson</td>
+			<td>46</td>
+			<td>Analista</td>
+		</tr>
+		<tr>
+			<td>Leila</td>
+			<td>38</td>
+			<td>Vendedora</td>
+		</tr>
+	</table>
+</body>
+</html>

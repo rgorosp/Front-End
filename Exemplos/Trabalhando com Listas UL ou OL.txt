@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Curso Front-End - WEBDESIGNER</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<ul id="lista" class="lista" /> <!-- ul - utilizado para lista -->
+		<li>Produto 1</li>
+		<li>Produto 2</li>
+		<li id="item3" class="item3">Produto 3</li>
+		<li>Produto 4</li>
+	</ul><!--lista-->
+</br>
+	<ul id="lista2" class="lista2" /> <!-- ul - utilizado para lista -->
+		<li>Produto 1</li>
+		<li>Produto 2</li>
+		<li id="item3" class="item3">Produto 3</li>
+		<li>Produto 4</li>
+	</ul><!--lista2-->
+<!-- Lista pode ser usado a tag ul ou ol-->
+</body>
+</html>
+
+
+
+
+*{ /* Reset da Pagina */
+	margin: 0;
+	padding: 0;
+}
+
+html,body{
+	background-color: yellow; /* Usado para cor de fundo */
+	height: 100%;
+}
+
+/* # => Usado para ID */
+/* . => Usado para CLASSE */
+/* Se for usar o mesmo nome para as div, usa-se a classe como padrao */
+
+.lista,.lista2{
+	list-style-position: inside;
+	list-style-type: disc;
+	margin-left: 20px; /* espaço da margem */
+}
+
+.lista li,.lista2 li{
+	color: green;
+	font-size: 20px;
+}
+
+.lista .item3{
+	color: red;
+	font-weight: bold;
+}
+
+.lista2 .item3{
+	color: orangered;
+	font-weight: 900;
+}

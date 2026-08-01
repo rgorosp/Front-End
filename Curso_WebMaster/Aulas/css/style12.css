@@ -1,0 +1,44 @@
+*{
+	margin: 0; /*Remove todos os espaçamentos externos padrão dos elementos */
+	padding: 0; /* Remove os espaçamentos internos */
+	box-sizing: border-box; /* Nao estoura o tamanho da tela */
+}
+
+html,body{
+	background-color: red;
+    display: grid; /* Isso permite usar o sistema de layout moderno do CSS para alinhar elementos */
+    height: 100%;
+    place-items: center;
+}
+
+.pai{
+	width: 1280px;
+	background-color: greenyellow;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+
+.filho1, 
+.filho2{
+	width: 640px;
+	height: 300px;
+	display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.filho1{
+	background-color: orange;
+    float: right;    
+    font-size: 50px;
+}
+
+.filho2{
+	background-color: green;
+	float: left;   
+    font-size: 100px;
+}
+
+
+

@@ -1,0 +1,23 @@
+*{
+	margin: 0; /*Remove todos os espaçamentos externos padrão dos elementos */
+	padding: 0; /* Remove os espaçamentos internos */
+	box-sizing: border-box; /* Nao estoura o tamanho da tela */
+}
+
+html,body{
+   background-color: #6a7991;
+   height: 100%;
+   padding: 5px; 
+}
+
+label{
+	display: block; /* centraliza */
+	width: 100px;
+	height: 50px;
+	background-color: #ccc;
+	color: blue;
+	text-align: center;
+	margin: 40px auto;
+	padding: 15px 0;
+	cursor: pointer;
+}

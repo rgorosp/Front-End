@@ -1,0 +1,26 @@
+*{
+	margin: 0; /*Remove todos os espaçamentos externos padrão dos elementos */
+	padding: 0; /* Remove os espaçamentos internos */
+	box-sizing: border-box; /* Nao estoura o tamanho da tela */
+}
+
+html,body{
+	background-color: greenyellow;
+    display: grid; /* Isso permite usar o sistema de layout moderno do CSS para alinhar elementos */
+    height: 100%;
+ /*   place-items: center; */
+    padding: 10px;
+}
+
+.box{
+	height: 20%;
+	width: 30%;
+	background-color: orange;
+}
+
+.box1{
+	height: inherit;
+	width: inherit;
+	background-color: green;
+	display: inline-block; /* joga na mesma linha */
+}

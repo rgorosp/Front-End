@@ -1,0 +1,37 @@
+*{
+	margin: 0; /*Remove todos os espaçamentos externos padrão dos elementos */
+	padding: 0; /* Remove os espaçamentos internos */
+	box-sizing: border-box; /* Nao estoura o tamanho da tela */
+}
+
+html,body{
+   background-color: #5a03fc;
+   height: 100%;
+   padding: 5px; 
+}
+
+/* Chamada da Font via Link */
+h2{
+	font-family: "Open Sans";
+}
+
+/* Chamada da Font via Pasta Fonts */
+/* apenas registra a fonte */
+@font-face{
+	font-family: "BebasNeue";
+	src: url('../fonts/BebasNeue-Regular.ttf');
+}
+
+/* Aplica a fonte no h3 */
+h3{
+    font-family: "BebasNeue";
+}
+
+.box{
+	width: 300px;
+	padding: 20px 5px;
+	height: 200px;
+	font-family: tahoma;
+	color: orange;
+	background-color: green;
+}

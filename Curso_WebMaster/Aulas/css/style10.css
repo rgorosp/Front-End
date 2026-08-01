@@ -1,0 +1,35 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,body{
+	background-color: rgb(65, 110, 65);
+	width: '100%';
+}
+
+.listas{
+	list-style-position: inside;
+	list-style-type: disc;
+}
+
+.listas li{
+	font-size: 20px;
+	color: magenta;
+	margin: 20px;
+	padding: 2px;
+}
+
+.listas li.listas1{
+	color:red;
+}
+
+.listas2{
+	list-style-position: inside;
+	list-style-type: circle;
+}
+
+.listas2 li.listas3{
+	color: magenta;
+}

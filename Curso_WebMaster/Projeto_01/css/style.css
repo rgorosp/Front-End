@@ -1,0 +1,46 @@
+*{
+	margin: 0; /*Remove todos os espaçamentos externos padrão dos elementos */
+	padding: 0; /* Remove os espaçamentos internos */
+	box-sizing: border-box; /* Nao estoura o tamanho da tela */
+}
+
+html,body{
+   background-color: #5a03fc;
+   height: 100%;
+   padding: 5px; 
+}
+
+.center{
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.header{
+    width: 100%;
+    height: 90px;
+    background-color: darkslategray;
+}
+
+.header img{
+   margin: 20px;
+}
+
+.conteiner-banner{
+    width: 100%;
+    height: 550px;
+    background-image: url(../img/banner.png); /* Use quando a imagem é apenas decorativa ou serve como plano de fundo */
+    background-repeat: no-repeat; /* Impede que a imagem fique repetindo */
+    background-size: cover; /* Faz a imagem cobrir toda a área do elemento */
+    background-position: center; /* Centraliza a imagem. */
+}
+
+.conteiner-banner > .center{
+    height: 100%;
+}
+
+.conteiner-banner .formulario{
+    width: 400px;
+    height: 100%;
+    background-color: aliceblue;
+    float: right;
+}

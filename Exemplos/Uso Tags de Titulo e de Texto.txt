@@ -1,0 +1,19 @@
+<!DOCTYPE html> <!-- Padrao do HTML5 -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Curso Front-End - WEBDESIGNER</title>
+</head>
+<body>
+	<h4>Titulo 1</h4> <!-- TAGS DE TITULO -->
+	<h3>Titulo 2</h3>
+	<h2>Titulo 3</h2>
+	<h1>Titulo 4</h1>
+
+	<p>Usado para Texto em blocos, dentro da minha marcação do HTML</p> <!-- TAG DE TEXTO -->
+	<span>Usado para Texto in-line dentro da minha marcação do HTML</span> <!-- TAG DE TEXTO -->
+	</br> <!-- Utilizado para Quebra de Linhas no uso do SPAN -->
+	<span>Usado para Texto in-line dentro da minha marcação do HTML</span> <!-- TAG DE TEXTO -->
+</body>
+</html>

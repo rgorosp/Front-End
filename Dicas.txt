@@ -1,0 +1,20 @@
+Criando formulário de contato profissional
+
+DICAS
+
+No CSS na estilização de estilos o (.) é usado para ID, e o (#) é usado para CLASS.
+Obs. Na utilização do DIV dentro de DIV, o correto é não atacar por inteiro, e sim separar por ID e CLASS.
+===========================================================================================================================
+SUBLIME TEXT
+
+Aumentar a Fonte => Preferencies > Settings
+Dividir a tela em colunas => View > Layout
+Aplicar temas no sublime text => Entrar no Site: https://colorsublime.github.io/rsublime.com
+Para alterar o tema => preferences > select color scheme ...
+Para voltar as configurações originais do sublime, ir na pasta: C:\Users\rgoro\AppData\Roaming e deletar a pasta Sublime Text 3
+===========================================================================================================================
+COLOR PICKER
+
+Digitar no google, ira trazer as cores para analise.
+===========================================================================================================================
+

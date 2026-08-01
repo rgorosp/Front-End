@@ -1,0 +1,34 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: orange;
+}
+
+/*
+Meu comentario de Teste 
+*/
+
+.artigo{
+	width: 1280px;
+	margin: 10px auto;
+	text-align: center;
+}
+
+.artigo h1{
+	font-family: Verdana;
+	color: blue;
+	font-size: 25px;
+	letter-spacing: 10px;/* Espaçamento entre as letras */
+}
+
+.artigo p{
+	font-family: Consolas;
+	color: rgb(25, 8, 28);
+	font-size: 20px;
+	text-align: justify;
+	line-height: 40px;/* espaço entre linhas */
+}

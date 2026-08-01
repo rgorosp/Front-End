@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Utilizar float e as vantagens -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Curso Front-End - WEBDESIGNER</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="pai" class="pai">
+		<div id="filho" class="filho">1			
+		</div><!-- filho -->	
+		<div id="filho1" class="filho1">2
+		</div><!-- filho1 -->
+		<div id="filho2" class="filho2">3			
+		</div><!-- filho -->	
+		<div id="filho3" class="filho3">4
+		</div><!-- filho1 -->
+		<div style="clear: both;">
+		</div><!-- style -->
+	</div><!-- pai -->
+</body>
+</html>
+
+
+*{ /* Reset da Pagina */
+	margin: 0;
+	padding: 0;
+}
+
+html,body{
+	background-color: dodgerblue; /* Usado para cor de fundo */
+	height: 100%;
+}
+
+.pai{
+	width: 1280px;
+	padding: 20px 0;
+	background: blue;
+	margin: 0 auto;
+}
+
+.filho,.filho1,.filho2,.filho3{
+/*	display: inline-block;
+	margin-right: -4px; */ /* Mantem os blocos na mesma linha */
+	box-sizing: border-box;
+	width: 640px;
+	height: 300px;
+	background: red;
+	float: left;
+	text-align: center;
+	font-size: 40px;
+	padding: 50px 0;
+	color: white;
+	border: 1px solid black; 
+/* inibindo os dois itens acima, e usando o float com box-sizing, não
+esquecer de colocar na div o parametro <div style="clear: both;"> */
+}

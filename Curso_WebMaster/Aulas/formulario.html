@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Criar um Formulário Simples</title>
+</head>
+<body>
+	<h2 style="text-align: center">Criar um Formulario Simples</h2>
+
+	<form>
+		<!-- Campo Nome -->
+		<label for="Nome">Nome:</label><br>
+		<input type="text" id="Nome" name="Nome"
+		placeholder="Digite o seu nome completo:" required>
+	    </br></br>
+
+	    <!-- Campo E-mail -->
+	    <label for="E-mail">E-mail:</label><br>
+		<input type="E-mail" id="E-mail" name="E-mail"
+		placeholder="Digite seu E-mail" required>
+		</br></br>
+
+		<!-- Campo Mensagem -->
+		<label for="Mensagem">Mensagem:</label><br>
+		<textarea id="Mensagem" name="Mensagem" rows="4" cols="40"
+		placeholder="Escreva sua mensagem..." required></textarea>
+	    </br></br>
+
+	    <!-- Submissão do Formulário -->
+        <input type="submit" name="Enviar">
+	</form>
+</body>
+</html>

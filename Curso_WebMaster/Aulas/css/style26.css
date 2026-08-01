@@ -1,0 +1,126 @@
+*{
+	margin: 0; /*Remove todos os espaçamentos externos padrão dos elementos */
+	padding: 0; /* Remove os espaçamentos internos */
+	box-sizing: border-box; /* Nao estoura o tamanho da tela */
+}
+
+html,body{
+   background-color: white;   
+   height: 100%;
+   padding: 5px;
+   overflow-y: hidden; /* esconde excesso vertical */
+   overflow-x: hidden; /* esconde excesso horizontal */
+}
+
+header{
+	display: flex; /* serve para colocar os elementos em linha e organizar automaticamente */
+	flex-wrap: wrap; /* serve para permitir que os elementos quebrem linha quando faltar espaço */
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 20px 0;
+	height: 550px;
+}
+
+.logo img{
+    width: 80px;
+}
+
+.logo{
+	width: 50%;
+}
+
+.menu a{
+	font-family: Verdana;
+	font-style: initial;
+	margin-right: 15px;
+	text-decoration: none;
+	align-items: center;
+	color: black;
+}
+
+section.sobre{
+	height: calc(100% - 200px);
+	position: relative;
+}
+
+.center{
+	margin-top: -400px;
+	margin-left: 100px;
+	position: absolute;
+	font-size: 30px;
+}
+
+.extras{
+	position: absolute;
+	bottom: 0;
+	right: -250px;
+	width: 800px;
+	height: 800px;
+	background-color: #017143;
+	border-radius: 50% /* transforma em quadrado em redondo */
+}
+
+.extras img{
+	width: 30%;	
+}
+
+.extras1{
+    position: absolute;
+    right: 20px;
+    top: -300px;
+}
+
+.extras1 a{
+    display: block; /* joga a imagem para baixo */
+    margin-bottom: 10px;
+}
+
+.extras1 img{
+    width: 25px;
+}
+
+.facebook img{
+    width: 20px;
+}
+
+.center span{
+    color:  #017143;
+}
+
+.center p{
+	font-size: 15px;
+	width: 350px;
+	height: 100px;
+	text-align: justify;
+}
+
+.botao{
+	margin-top: -30px;
+	margin-left: 110px;
+}
+
+.botao button{
+	background-color: #017143;
+	color: white;
+	border: 0;
+	border-radius: 10px;
+	width: 100px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.outros-pedidos{
+	position: absolute;
+	right: 40%;
+   top: -100px;
+}
+
+.outros-pedidos img{
+	width: 60px;
+	margin-top: 50px;
+}
+
+.thumb3 img{
+		margin-left: 10px;    
+		margin-bottom: 5px;
+}

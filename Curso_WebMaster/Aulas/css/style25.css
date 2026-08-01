@@ -1,0 +1,11 @@
+*{
+	margin: 0; /*Remove todos os espaçamentos externos padrão dos elementos */
+	padding: 0; /* Remove os espaçamentos internos */
+	box-sizing: border-box; /* Nao estoura o tamanho da tela */
+}
+
+html,body{
+   background-color: #5a03fc;
+   height: 100%;
+   padding: 5px; 
+}

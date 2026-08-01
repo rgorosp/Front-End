@@ -1,0 +1,46 @@
+*{
+	margin: 0; /*Remove todos os espaçamentos externos padrão dos elementos */
+	padding: 0; /* Remove os espaçamentos internos */
+	box-sizing: border-box; /* Nao estoura o tamanho da tela */
+}
+
+html,body{
+   background-color: darkgreen;
+   height: 100%;
+   padding: 5px; 
+}
+
+.teste,.teste1,.teste2{
+	vertical-align: top;
+	margin-left: 30px;
+	background-color: white;
+	width: 300px;
+	height: 150px;
+	margin-top: 30px;
+	display: inline-block; /* quadrados na mesma linha */
+}
+
+/* funciona qdo o mouse fica pressionado */
+.teste:active{
+	background-color: orange;
+}
+
+/* estilizar a div quando o input dentro dela estiver focado */
+.teste:focus-within {
+    background-color: yellow;
+}
+
+/* foco no input */
+.test:focus {
+	background-color: darkred;
+}
+
+.teste1{
+	background-color: red;
+}
+
+/* funciona ao passar o mouse */
+.teste2:hover{ /* muda a cor de fundo ao passar o mouse */
+	background-color: blue;
+	height: 300px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta translate="pt-br">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css\style25.css">
+	<title>Tags e atributos personalizados</title>
+	<style type="text/css">
+		minha-tag{
+			display: block;
+		}
+		/* utilizando via class */
+	    minha-tag.one{
+	    	width: 300px;
+	    	height: 200px;
+	    	font-size: inherit;
+	    	color: blue;
+	    	background-color: yellow;
+		}
+		/* utilizando via tag */
+	    [data-tag="two"]{
+	    	width: 400px;
+	    	height: 300px;
+	    	font-size: inherit;
+	    	color: yellow;
+	    	background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<minha-tag class="one" data-tag="one">
+		Emerson
+	</minha-tag>
+	<minha-tag class="two" data-tag="two">
+		Livia
+	</minha-tag>
+</body>
+</html>

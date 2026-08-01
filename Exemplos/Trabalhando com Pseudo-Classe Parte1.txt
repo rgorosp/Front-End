@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- Trabalhando com Pseudo-Classe Parte 1 -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Curso Front-End - WEBDESIGNER</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="teste1"></div>
+	<div class="teste2"></div>
+	<div class="teste3"></div>
+	<div class="teste4"></div>
+    </br>
+	<input class="form1" name="text">
+	<a class="link1" target="_blank" href="https://www.google.com/">Google</a>
+</body>
+</html>
+
+
+*{ /* Reset da Pagina */
+	margin: 0;
+	padding: 0;
+}
+
+html,body{
+	background-color: white; /* Usado para cor de fundo */
+	height: 100%;
+}
+
+/* "#" Usado para ID e "." Usado para Classe */
+
+.teste1,.teste2,.teste3,.teste4{ 	
+	width: 200px;
+	height: 200px;
+	margin-top: 20px;
+	margin-left: 30px;
+	background-color: #CCC;
+	display: inline-block;
+}
+
+.teste2{
+	background-color: rgb(100, 100, 100);
+}
+
+.teste3{
+	background-color: rgb(45, 45, 45);
+}
+
+.teste4{
+	background-color: rgb(150, 150, 150);
+}
+
+/* PSEUDO CLASSE */
+/* hover - qdo passar o mouse mudara de cor */
+.teste1:hover{
+	background-color: blue;
+}
+
+.teste2:hover{
+	background-color: yellow;
+}
+
+.teste3:hover{
+	background-color: red;
+}
+
+/* active - qdo manter o mouse clicado, mudara de cor*/
+.teste4:active{
+	background-color: black;
+}
+
+/* focus - qdo clicado, mudara de cor, utilizado para form*/
+.form1:focus{
+	background-color: green;
+}
+
+/* link - utilizado para link*/
+.link1:link{
+	color: orange;
+}
+

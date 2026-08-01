@@ -1,0 +1,25 @@
+*{
+	margin: 0; /*Remove todos os espaçamentos externos padrão dos elementos */
+	padding: 0; /* Remove os espaçamentos internos */
+	box-sizing: border-box; /* Nao estoura o tamanho da tela */
+}
+
+html,body{
+   background-color: #6d3b07;
+   height: 100%;
+   padding: 5px;
+}
+
+.bg{
+	width: 500px;
+	height: 300px;
+	margin: 0 auto;
+	background-color: #654321;
+    overflow: hidden; /* impede a imagem de vazar da caixa */
+}
+
+.bg img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* mantém a proporção sem cortar */
+}

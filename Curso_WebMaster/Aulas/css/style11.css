@@ -1,0 +1,50 @@
+*{
+	margin: 0; /*Remove todos os espaçamentos externos padrão dos elementos */
+	padding: 0; /* Remove os espaçamentos internos */
+	box-sizing: border-box; /* Nao estoura o tamanho da tela */
+}
+
+html,body{
+	background-color: rgb(13, 224, 182);
+    display: grid;
+    place-items: center;
+    height: 55vh;
+}
+
+.header{
+	box-sizing: content-box;
+	width: 1280px; /* largura */
+	margin: 0 auto;
+	background-color: orange;
+	display: flex; /* para separar em colunas */
+/*	padding: 30px;   margem e topo juntos*/
+}
+
+.header .header1,
+.header .header2{
+	box-sizing: border-box;
+	vertical-align: top;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px; 
+	width: 600px;
+	border-style: solid;
+}
+
+.header1 p{
+	text-align: justify;
+	color: red;
+}
+
+.header2 p{
+	background-color: lime;
+}
+
+.header1 h1{
+	color: blue;
+}
+
+.header h1{
+	text-align: center;
+}

@@ -1,0 +1,22 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: black;
+}
+
+#div1 > h1 {
+	color: red;
+	text-align: center;
+} /* Atacando o ID */
+
+#div11 > h1{
+	color: blue;
+} /* Atacando dentro da mesma DIV outra DIV */
+
+.div2 h4 {
+	color: orange;
+} /* Atacando a Classe */

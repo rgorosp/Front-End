@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- Tudo sobre backgrounds e como utilizar -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Curso Front-End - WEBDESIGNER</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="bg" class="bg">
+		
+	</div><!--bg-->
+
+</body>
+</html>
+
+
+
+*{ /* Reset da Pagina */
+	margin: 0;
+	padding: 0;
+}
+
+html,body{
+	background-color: white; /* Usado para cor de fundo */
+	height: 100%;
+}
+
+/* "." Usado para ID e "#" Usado para Classe */
+
+.bg{
+	width: 50%;
+	height: 50%;
+	margin: 0 auto;
+
+	/* backgrounds */
+
+	background-color: rgba(200, 200, 200, 0.4);
+	background-image: url(../img/danki_bg.jpg);
+	background-size: contain;
+	background-repeat: no-repeat; /* no-repeat, repeat-x, repeat-y */
+	background-position: center;
+}

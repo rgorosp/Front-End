@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Curso Front-End - WEBDESIGNER</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="artigo" class="artigo">
+		<h2>Lorem Ipsum</h2>
+		<p>Lorem ipsum é um nome usado para um tipo comum de texto de espaço reservado. Também conhecido como preenchimento ou texto fictício, 
+                 é simplesmente uma cópia que serve para preencher um espaço sem realmente dizer nada significativo. É essencialmente um texto sem sentido, 
+                 mas dá uma ideia de como será o texto real no produto final.</p>
+	</div><!--artigo-->
+</body>
+</html>
+
+
+
+*{ /* Reset da Pagina */
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: greenyellow; /* Usado para cor de fundo */
+}
+
+/* # => Usado para ID */
+/* . => Usado para CLASSE */
+/* Se for usar o mesmo nome para as div, usa-se a classe como padrao */
+
+.artigo{
+	width: 800px; /* largura */
+	margin: 20px auto;
+	text-align: center; /* alinhamento de texto */
+}
+
+.artigo > h2{
+	color: rgb(122, 102, 45); /* cor da fonte */
+	font-size: 40px; /* tamanho da fonte */
+	font-family: "serif", "Times new roman","consolas" ; /* estilo da fonte */
+	font-style: italic; /* propriedades da fonte */
+	font-weight: bold; /* propriedades da fonte , bold é default */
+	font-variant: small-caps; /* altera as letras iniciais da fonte */
+	letter-spacing: 10px; /* Espaços entre as palavras */
+}
+
+.artigo > p{
+	color: #173459; /* cor da fonte */
+	font-size: 30px; /* tamanho da fonte */
+	font-family: "Times new roman","arial" ; /* estilo da fonte */
+	font-style: normal; /* propriedades da fonte */
+	font-weight: normal; /* propriedades da fonte , bold é default */
+	font-variant: normal; /* altera as letras iniciais da fonte */
+	margin-top: 10px; /* espaçamento entre as tags */
+	line-height: 50px; /* espaçamento entre as linhas */
+	text-align: justify; /* alinhamento de texto */
+}

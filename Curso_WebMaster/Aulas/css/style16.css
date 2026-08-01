@@ -1,0 +1,36 @@
+*{
+	margin: 0; /*Remove todos os espaçamentos externos padrão dos elementos */
+	padding: 0; /* Remove os espaçamentos internos */
+	box-sizing: border-box; /* Nao estoura o tamanho da tela */
+}
+
+html,body{
+	background-color: yellow;
+   height: 100%;
+   padding: 5px;
+}
+
+.menu{
+	position: fixed;
+	width: 98%;
+	height: 200px;
+	background-color: blue;
+}
+
+.tabela{
+	margin-top: 210px; /* um pouco maior que o menu */
+}
+
+.tabela table{
+	width: 600px;
+	margin: 0 auto;
+c}
+
+.tabela td{
+	padding: 10px;
+	height: 60px;
+	border: 2px solid black;
+	background-color: lightblue;
+	vertical-align: top;
+	text-align: left;
+}

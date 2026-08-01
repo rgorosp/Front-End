@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- Aprendendo a utilizar a propriedade position -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Curso Front-End - WEBDESIGNER</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<!--
+	<table>
+		<tr>
+			<td>Nome</td>
+			<td>Idade</td>
+		</tr>
+
+		<tr>
+			<td>Emerson</td>
+			<td>46</td>
+		</tr>
+
+		<tr>
+			<td>Sergio</td>
+			<td>38</tr>
+		</tr>
+
+		<tr>
+			<td>Mike</td>
+			<td>42</td>
+		</tr> -->
+		
+	<div id=Menu class="Menu"></div><!--menu-->
+	<div id=Box  class="Box"> </div><!--menu-->
+
+	</table>
+</body>
+</html>
+
+
+*{ /* Reset da Pagina */
+	margin: 0;
+	padding: 0;
+}
+
+html,body{
+	background-color: white; /* Usado para cor de fundo */
+	height: 100%;
+}
+
+.Menu{
+	position: fixed; /* Mantem fixo qdo usar a barra de rolagem */
+	width: 100%;
+	height: 200px;
+	background-color: #069;
+}
+
+.Box{
+	width: 100%;
+	height: 1480px;
+	background-color: green;
+}
+
+/*
+
+table{
+	width: 800px;
+	margin: 0 auto;
+	border-collapse: collapse; /* Retrai as linhas igual as bordas do excel */
+}
+/*
+table tr td{
+	border: 2px solid black;
+	height: 200px;
+	vertical-align: bottom;
+	background-color: gray;
+} 
+
+*/

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Curso Front-End - WEBDESIGNER</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="header" class="header">
+		
+	</div> <!-- header -->
+	<div id="article" class="article">
+		
+	</div>
+</body>
+</html>
+
+
+*{ /* Reset da Pagina */
+	margin: 0;
+	padding: 0;
+}
+
+html,body{
+	background-color: powderblue; /* Usado para cor de fundo */
+	height: 100%;
+}
+
+/* # => Usado para ID */
+/* . => Usado para CLASSE */
+/* Se for usar o mesmo nome para as div, usa-se a classe como padrao */
+
+/* Dimensões:  Prioridade */;
+/* min-width, max-width, width */
+.header{
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1280px;
+	min-width: 25px;
+	height: 200px;
+	background-color: gray;
+}
+
+.article{
+	margin: 0 auto;
+	width: 100%;
+	height: 200px;
+	min-height: 10px;
+	background-color: red;
+}

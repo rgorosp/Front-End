@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="L&L Comércio de Produtos e Equipamentos para Panificadora LTDA. Formas, bandejas, telas e acessórios em alumínio e inox para panificação." />
+  <title>L&L Panificação | Formas, Bandejas e Acessórios</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #6d3b07;
+      --bg-soft: #fffaf4;
+      --card: #ffffff;
+      --primary: #6f4425;
+      --primary-dark: #4f2f17;
+      --primary-light: #c58b5a;
+      --text: #2f2219;
+      --muted: #6d5a4c;
+      --line: rgba(111, 68, 37, 0.10);
+      --shadow: 0 10px 30px rgba(79, 47, 23, 0.08);
+      --radius: 22px;
+      --container: 1200px;
+      --whats: #25d366;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(197,139,90,0.10), transparent 25%),
+        linear-gradient(180deg, #fcf7f1 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 250, 244, 0.88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 80px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1.05rem;
+      letter-spacing: 0.2px;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.96rem;
+    }
+
+    nav a:hover { color: var(--primary); }
+
+    .nav-cta {
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-section {
+      padding: 40px 0 24px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      padding: 10px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: #fff3e6;
+      color: var(--primary);
+      border: 1px solid rgba(197,139,90,0.25);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      line-height: 1.04;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 2px solid transparent;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover { background: var(--primary-dark); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      border-color: rgba(111,68,37,0.35);
+    }
+
+    .hero-points {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-points span {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .hero-image {
+      position: relative;
+      min-height: 540px;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+      background: #e8ddd0;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.20));
+      pointer-events: none;
+    }
+
+    .hero-card {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      background: rgba(255, 250, 244, 0.92);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(111,68,37,0.10);
+      border-radius: 18px;
+      padding: 16px 18px;
+      z-index: 2;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .hero-card span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .stats {
+      padding: 8px 0 18px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.8rem;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.96rem;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 14px;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1.1;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 34px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .category {
+      margin-top: 40px;
+    }
+
+    .category-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .category-head h3 {
+      font-size: 1.45rem;
+      color: var(--primary-dark);
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .category-head h3::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      bottom: 4px;
+      width: 5px;
+      border-radius: 10px;
+      background: linear-gradient(180deg, var(--primary-light), var(--primary));
+    }
+
+    .category-head span {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(79,47,23,0.12);
+    }
+
+    .card-media {
+      height: 230px;
+      background: linear-gradient(180deg, #fff9f2, #f5eadf);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .card-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .card-body h4 {
+      font-size: 1.1rem;
+      line-height: 1.3;
+      min-height: 56px;
+    }
+
+    .card-body p {
+      color: var(--muted);
+      font-size: 0.96rem;
+      flex: 1;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .mini-btn {
+      flex: 1 1 140px;
+      text-align: center;
+      text-decoration: none;
+      padding: 11px 12px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: 1px solid transparent;
+    }
+
+    .mini-btn.whats {
+      background: var(--whats);
+      color: white;
+    }
+
+    .mini-btn.mail {
+      background: #f9efe4;
+      color: var(--primary);
+      border-color: rgba(111,68,37,0.14);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.85);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: var(--primary-dark);
+    }
+
+    .panel p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .feature {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      border-radius: 16px;
+      background: var(--bg-soft);
+      border: 1px solid rgba(111,68,37,0.08);
+    }
+
+    .feature-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .feature span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, rgba(111,68,37,0.98), rgba(197,139,90,0.98));
+      color: white;
+      border-radius: 28px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta-box h3 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .cta-box p {
+      color: rgba(255,255,255,0.9);
+      max-width: 620px;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .cta-box .btn-primary {
+      background: white;
+      color: var(--primary);
+    }
+
+    .cta-box .btn-secondary {
+      border-color: rgba(255,255,255,0.5);
+      color: white;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding: 36px 0 50px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      gap: 24px;
+    }
+
+    .footer-grid h4 {
+      margin-bottom: 10px;
+      color: var(--primary-dark);
+      font-size: 1.02rem;
+    }
+
+    .footer-grid p,
+    .footer-grid a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.96rem;
+    }
+
+    .footer-grid a:hover { color: var(--primary); }
+
+    .footer-note {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+      text-decoration: none;
+      background: var(--whats);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 14px 26px rgba(37,211,102,0.30);
+    }
+
+    @media (max-width: 1100px) {
+      .hero,
+      .about-grid,
+      .cta-box,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-actions { justify-content: flex-start; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-image { min-height: 460px; }
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        min-height: auto;
+        padding: 14px 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav { gap: 14px; }
+      .nav-cta { display: none; }
+      .hero-section { padding-top: 26px; }
+      .hero { gap: 20px; }
+      .hero-image { min-height: 360px; }
+      .hero-card { left: 14px; right: 14px; bottom: 14px; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      section { padding: 52px 0; }
+      .cta-box { padding: 28px; }
+      .footer-note { flex-direction: column; }
+    }
+  
+    .card {
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 42px rgba(79,47,23,0.14);
+    }
+
+    .card-media img {
+      transition: transform 0.35s ease;
+      cursor: zoom-in;
+    }
+
+    .card:hover .card-media img {
+      transform: scale(1.03);
+    }
+
+    .card-media.gallery-two {
+      gap: 10px;
+      align-items: stretch;
+      justify-content: stretch;
+    }
+
+    .card-media.gallery-two img {
+      width: calc(50% - 5px);
+      height: 100%;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid rgba(111,68,37,0.10);
+      padding: 8px;
+    }
+
+    .card-pascoa .card-media {
+      height: auto;
+      min-height: 230px;
+      padding: 14px;
+      align-items: stretch;
+      justify-content: stretch;
+    }
+
+    .pascoa-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      width: 100%;
+    }
+
+    .pascoa-grid img {
+      width: 100%;
+      height: 120px;
+      object-fit: contain;
+      background: #fff;
+      border: 1px solid rgba(111,68,37,0.10);
+      border-radius: 12px;
+      padding: 8px;
+    }
+
+    .pascoa-grid img:nth-child(1),
+    .pascoa-grid img:nth-child(2) {
+      grid-column: span 3;
+    }
+
+    .pascoa-grid img:nth-child(3),
+    .pascoa-grid img:nth-child(4),
+    .pascoa-grid img:nth-child(5) {
+      grid-column: span 2;
+    }
+
+    .quick-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .ghost-btn {
+      flex: 1 1 140px;
+      text-align: center;
+      text-decoration: none;
+      padding: 11px 12px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: 1px solid rgba(111,68,37,0.16);
+      background: #fff;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    .ghost-btn:hover {
+      background: #fff6ee;
+    }
+
+    .showcase-section {
+      padding-top: 8px;
+    }
+
+    .showcase-wrap {
+      background: rgba(255,255,255,0.88);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .showcase-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .showcase-head h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+
+    .showcase-head p {
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    .carousel-controls {
+      display: flex;
+      gap: 10px;
+    }
+
+    .carousel-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(111,68,37,0.14);
+      background: #fff;
+      color: var(--primary);
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+    .showcase-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(250px, 1fr);
+      gap: 18px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 8px;
+    }
+
+    .showcase-carousel::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .showcase-carousel::-webkit-scrollbar-thumb {
+      background: rgba(111,68,37,0.24);
+      border-radius: 999px;
+    }
+
+    .show-item {
+      scroll-snap-align: start;
+      background: linear-gradient(180deg, #fffdfb, #fff7ef);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    .show-item img {
+      width: 100%;
+      height: 190px;
+      object-fit: contain;
+      background: linear-gradient(180deg, #fff9f2, #f5eadf);
+      padding: 16px;
+    }
+
+    .show-item-body {
+      padding: 16px;
+    }
+
+    .show-item-body h3 {
+      font-size: 1.04rem;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+
+    .show-item-body p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      margin-bottom: 12px;
+      min-height: 68px;
+    }
+
+    .mini-link {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding: 40px 0 50px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, #7a4311, #5f3108);
+      color: #fff;
+    }
+
+    .footer-grid h4 {
+      color: #fff;
+    }
+
+    .footer-grid p,
+    .footer-grid a,
+    .footer-note {
+      color: rgba(255,255,255,0.92);
+    }
+
+    .footer-grid a:hover {
+      color: #ffe0b8;
+    }
+
+    .footer-note {
+      border-top: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .lightbox,
+    .product-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(26, 14, 8, 0.78);
+      z-index: 1200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .lightbox.is-open,
+    .product-modal.is-open {
+      display: flex;
+    }
+
+    .lightbox-dialog,
+    .product-dialog {
+      background: #fff;
+      border-radius: 24px;
+      max-width: 1000px;
+      width: min(100%, 1000px);
+      box-shadow: 0 28px 60px rgba(0,0,0,0.25);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .lightbox-dialog {
+      background: #fffaf4;
+      max-width: 880px;
+    }
+
+    .lightbox-close,
+    .product-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.94);
+      color: var(--primary-dark);
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      z-index: 3;
+    }
+
+    .lightbox-content {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 14px;
+      padding: 20px;
+      align-items: center;
+    }
+
+    .lightbox-thumbs {
+      display: grid;
+      gap: 10px;
+    }
+
+    .lightbox-thumbs img {
+      width: 100%;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      background: #fff;
+      padding: 4px;
+    }
+
+    .lightbox-thumbs img.active {
+      border-color: var(--primary);
+    }
+
+    .lightbox-stage {
+      min-height: 520px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, #fff9f2, #f5eadf);
+      padding: 24px;
+    }
+
+    .lightbox-stage img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+    }
+
+    .product-dialog {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .product-gallery {
+      background: linear-gradient(180deg, #fff9f2, #f5eadf);
+      padding: 20px;
+      border-right: 1px solid var(--line);
+    }
+
+    .product-gallery-main {
+      background: #fff;
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 12px;
+      min-height: 320px;
+      display: grid;
+      place-items: center;
+    }
+
+    .product-gallery-main img {
+      max-height: 300px;
+      object-fit: contain;
+      width: 100%;
+    }
+
+    .product-gallery-thumbs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .product-gallery-thumbs img {
+      width: 78px;
+      height: 78px;
+      object-fit: cover;
+      background: #fff;
+      border: 2px solid transparent;
+      border-radius: 14px;
+      padding: 4px;
+      cursor: pointer;
+    }
+
+    .product-gallery-thumbs img.active {
+      border-color: var(--primary);
+    }
+
+    .product-info {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .product-chip {
+      display: inline-flex;
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #fff3e6;
+      color: var(--primary);
+      font-weight: 700;
+      border: 1px solid rgba(197,139,90,0.25);
+    }
+
+    .product-info h3 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--primary-dark);
+      line-height: 1.1;
+    }
+
+    .product-info p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .product-points {
+      display: grid;
+      gap: 10px;
+    }
+
+    .product-points li {
+      list-style: none;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #fff8f1;
+      border: 1px solid rgba(111,68,37,0.08);
+      color: var(--text);
+    }
+
+    @media (max-width: 1100px) {
+      .lightbox-content,
+      .product-dialog {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-thumbs {
+        grid-auto-flow: column;
+        grid-auto-columns: 72px;
+        overflow-x: auto;
+      }
+
+      .product-gallery {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .pascoa-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pascoa-grid img:nth-child(1),
+      .pascoa-grid img:nth-child(2),
+      .pascoa-grid img:nth-child(3),
+      .pascoa-grid img:nth-child(4),
+      .pascoa-grid img:nth-child(5) {
+        grid-column: span 1;
+        height: 110px;
+      }
+
+      .showcase-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .showcase-carousel {
+        grid-auto-columns: 86%;
+      }
+
+      .lightbox-stage {
+        min-height: 320px;
+      }
+
+      .product-info {
+        padding: 22px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <a href="#inicio" class="brand">
+        <div class="brand-badge">L&L</div>
+        <div class="brand-text">
+          <strong>L&L Panificação</strong>
+          <span>Formas, bandejas e acessórios</span>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a class="nav-cta" href="https://wa.me/5511958570588?text=Olá! Gostaria%20de%20um%20orçamento." target="_blank">Pedir orçamento</a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero-section">
+      <div class="container hero">
+        <div class="hero-copy">
+          <span class="eyebrow">Catálogo profissional para panificação</span>
+          <h1>Produtos em Alumínio e Inox para Panificação Ltda</h1>
+          <p>A L&amp;L oferece formas, bandejas, telas e acessórios para padarias, confeitarias, pizzarias e lojas, que buscam qualidade, praticidade e confiança no dia a dia da produção.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#catalogo">Ver catálogo</a>
+            <a class="btn btn-secondary" href="https://wa.me/5511958570588?text=Olá! Gostaria%20de%20um%20orçamento." target="_blank">Pedir orçamento</a>
+          </div>
+
+          <div class="hero-points">
+            <span>Atendimento por WhatsApp</span>
+            <span>Consulta de tamanhos</span>
+            <span>Catálogo profissional</span>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="Produtos-para-panificação-profissional-prática.png" alt="Ambiente profissional de panificação com formas e assadeiras" />
+          <div class="hero-card">
+            <strong>L&amp;L Produtos para Panificação</strong>
+            <span>Qualidade, apresentação e praticidade para sua produção.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat">
+          <strong>+10</strong>
+          <span>Produtos já destacados no catálogo</span>
+        </div>
+        <div class="stat">
+          <strong>100%</strong>
+          <span>Atendimento direto por WhatsApp e e-mail</span>
+        </div>
+        <div class="stat">
+          <strong>B2B</strong>
+          <span>Foco em padarias, lojas e profissionais</span>
+        </div>
+        <div class="stat">
+          <strong>Alumínio &amp; Inox</strong>
+          <span>Materiais ideais para o dia a dia da produção</span>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="showcase-section">
+      <div class="container showcase-wrap">
+        <div class="showcase-head">
+          <div>
+            <h2>Destaques do catálogo</h2>
+            <p>Uma vitrine mais dinâmica para apresentar os produtos principais, com navegação lateral e acesso rápido aos itens mais procurados.</p>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-btn" type="button" aria-label="Voltar" data-carousel-prev>‹</button>
+            <button class="carousel-btn" type="button" aria-label="Avançar" data-carousel-next>›</button>
+          </div>
+        </div>
+
+        <div class="showcase-carousel" id="showcaseCarousel">
+          <article class="show-item">
+            <img src="forma-suica-varios.jpeg" alt="Formas Suiças">
+            <div class="show-item-body">
+              <h3>Aros para bolo</h3>
+              <p>Forma de bolo caseiro, forma suíça em alumínio resistente para produção de bolos, tortas e massas em geral, vários tamanhos.</p>
+              <a class="mini-link" href="#catalogo">Ver no catálogo</a>
+            </div>
+          </article>
+
+          <article class="show-item">
+            <img src="tela-pizza-redonda-varios.jpeg" alt="Tela de pizza redonda">
+            <div class="show-item-body">
+              <h3>Telas para pizza</h3>
+              <p>Assamento uniforme, melhor circulação de calor e acabamento ideal para pizzarias e operações de alto giro, há varios tamanhos para pedidos.</p>
+              <a class="mini-link" href="#catalogo">Ver no catálogo</a>
+            </div>
+          </article>
+
+          <article class="show-item">
+            <img src="forma-quadrada-varios.jpeg" alt="Formas quadradas">
+            <div class="show-item-body">
+              <h3>Formas sob medida</h3>
+              <p>Formas quadradas em alumínio e inox, confeitaria e produção profissional com foco em durabilidade, vários tamanhos.</p>
+              <a class="mini-link" href="#catalogo">Ver no catálogo</a>
+            </div>
+          </article>
+
+          <article class="show-item">
+            <img src="aros-pascoa.jpeg" alt="Aros de Páscoa">
+            <div class="show-item-body">
+              <h3>Linha sazonal de Páscoa</h3>
+              <p>Opções temáticas para destacar campanhas sazonais, com visual bonito e catálogo mais completo.</p>
+              <a class="mini-link" href="#catalogo">Ver no catálogo</a>
+            </div>
+          </article>
+
+          <article class="show-item">
+            <img src="luvas-grafitex.jpeg" alt="Luvas Grafitex">
+            <div class="show-item-body">
+              <h3>Acessórios e segurança</h3>
+              <p>Luvas e complementos para operação diária com mais conforto, proteção térmica e praticidade.</p>
+              <a class="mini-link" href="#catalogo">Ver no catálogo</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalogo">
+      <div class="container">
+        <h2 class="section-title">Nosso catálogo</h2>
+        <p class="section-subtitle">Uma seleção organizada dos principais produtos da L&amp;L para apresentar sua empresa de forma bonita, confiável e profissional.</p>
+
+        <div class="category">
+          <div class="category-head">
+            <h3>Bandejas e Assadeiras</h3>
+            <span>Modelos para produção e apoio</span>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <div class="card-media"><img src="bandeja-inox-canto-vazado.jpeg" alt="Bandeja Inox Canto Vazado" /></div>
+              <div class="card-body">
+                <h4>Bandeja Inox Canto Vazado</h4>
+                <p>Alta durabilidade e acabamento profissional. Consulte nossos tamanhos disponíveis.</p>
+                <div class="actions">
+                  <a class="mini-btn whats" target="_blank" href="https://wa.me/5511958570588?text=Olá! Tenho interesse na Bandeja Inox Canto Vazado.">📲 Pedir no WhatsApp</a>
+                  <a class="mini-btn mail" href="mailto:l.prates@hotmail.com?subject=Orçamento%20-%20Bandeja%20Inox%20Canto%20Vazado">E-mail</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media"><img src="bandeja-inox-canto-liso.jpeg" alt="Bandeja Inox Canto Liso" /></div>
+              <div class="card-body">
+                <h4>Bandeja Inox Canto Liso</h4>
+                <p>Design reforçado e excelente acabamento para uso profissional. Consulte nossos tamanhos disponíveis.</p>
+                <div class="actions">
+                  <a class="mini-btn whats" target="_blank" href="https://wa.me/5511958570588?text=Olá! Tenho interesse na Bandeja Inox Canto Liso.">📲 Pedir no WhatsApp</a>
+                  <a class="mini-btn mail" href="mailto:l.prates@hotmail.com?subject=Orçamento%20-%20Bandeja%20Inox%20Canto%20Liso">E-mail</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media"><img src="assadeira-brownie.jpeg" alt="Assadeira para Brownie" /></div>
+              <div class="card-body">
+                <h4>Assadeira para Brownie</h4>
+                <p>Ideal para preparo de brownies com cozimento uniforme e ótimo acabamento. Disponível em vários tamanhos.</p>
+                <div class="actions">
+                  <a class="mini-btn whats" target="_blank" href="https://wa.me/5511958570588?text=Olá! Tenho interesse na Assadeira para Brownie.">📲 Pedir no WhatsApp</a>
+                  <a class="mini-btn mail" href="mailto:l.prates@hotmail.com?subject=Orçamento%20-%20Assadeira%20para%20Brownie">E-mail</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media"><img src="assadeira-master-aluminio.jpeg" alt="Assadeira Master Alumínio" /></div>
+              <div class="card-body">
+                <h4>Assadeira Master Alumínio</h4>
+                <p>Alta resistência e excelente área de preparo. Ideal para produção em escala. Medidas aproximadas: 58x70x3,5 cm.</p>
+                <div class="actions">
+                  <a class="mini-btn whats" target="_blank" href="https://wa.me/5511958570588?text=Olá! Tenho interesse na Assadeira Master Alumínio.">📲 Pedir no WhatsApp</a>
+                  <a class="mini-btn mail" href="mailto:l.prates@hotmail.com?subject=Orçamento%20-%20Assadeira%20Master%20Alumínio">E-mail</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media"><img src="forma-broa.jpeg" alt="Forma Broa de Centeio" /></div>
+              <div class="card-body">
+                <h4>Forma Broa de Centeio Aluminio</h4>
+                <p>As nossas broas são ideais para o cozimento de broa de centeio. Ótimo para o preparo.</p>
+                <div class="actions">
+                  <a class="mini-btn whats" target="_blank" href="https://wa.me/5511958570588?text=Olá! Tenho interesse na forma de broa de centeio.">📲 Pedir no WhatsApp</a>
+                  <a class="mini-btn mail" href="mailto:l.prates@hotmail.com?subject=Orçamento%20-%20Bandeja%20de%20Alumínio%20Descartável">E-mail</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="category">
+          <div class="category-head">
+            <h3>Formas</h3>
+            <span>Modelos para bolos, frituras e preparos especiais</span>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <div class="card-media"><img src="forma-pao-de-mel.jpeg" alt="Forma Pão de Mel" /></div>
+              <div class="card-body">
+                <h4>Forma Pão de Mel</h4>
+                <p>Ideal para produção de pão de mel com padronização e qualidade. Disponível em vários tamanhos.</p>
+                <div class="actions">
+                  <a class="mini-btn whats" target="_blank" href="https://wa.me/5511958570588?text=Olá! Tenho interesse na Forma Pão de Mel.">📲 Pedir no WhatsApp</a>
+                  <a class="mini-btn mail" href="mailto:l.prates@hotmail.com?subject=Orçamento%20-%20Forma%20Pão%20de%20Mel">E-mail</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media"><img src="forma-suica.jpeg" alt="Forma Suíça" /></div>
+              <div class="card-body">
+                <h4>Forma Suíça</h4>
+                <p>Ideal para bolos com furo central, garantindo cozimento uniforme e acabamento profissional. Disponível em vários tamanhos.</p>
+                <div class="actions">
+                  <a class="mini-btn whats" target="_blank" href="https://wa.me/5511958570588?text=Olá! Tenho interesse na Forma Suíça.">📲 Pedir no WhatsApp</a>
+                  <a class="mini-btn mail" href="mailto:l.prates@hotmail.com?subject=Orçamento%20-%20Forma%20Suíça">E-mail</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media"><img src="forma-redonda-fundo-falso.jpeg" alt="Forma Redonda Fundo Falso" /></div>
+              <div class="card-body">
+                <h4>Forma Redonda Fundo Falso</h4>
+                <p>Ideal para tortas e cheesecakes, facilita a remoção sem danificar o preparo. Disponível em vários tamanhos.</p>
+                <div class="actions">
+                  <a class="mini-btn whats" target="_blank" href="https://wa.me/5511958570588?text=Olá! Tenho interesse na Forma Redonda Fundo Falso.">📲 Pedir no WhatsApp</a>
+                  <a class="mini-btn mail" href="mailto:l.prates@hotmail.com?subject=Orçamento%20-%20Forma%20Redonda%20Fundo%20Falso">E-mail</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media"><img src="Forma-Redonda-com-Tela-para-Fritura.jpeg" alt="Forma Redonda com Tela para Fritura" /></div>
+              <div class="card-body">
+                <h4>Forma Redonda com Tela para Fritura</h4>
+                <p>Ideal para frituras com melhor drenagem de óleo, garantindo crocância e praticidade no preparo.</p>
+                <div class="actions">
+                  <a class="mini-btn whats" target="_blank" href="https://wa.me/5511958570588?text=Olá! Tenho interesse na Forma Redonda com Tela para Fritura.">📲 Pedir no WhatsApp</a>
+                  <a class="mini-btn mail" href="mailto:l.prates@hotmail.com?subject=Orçamento%20-%20Forma%20Redonda%20com%20Tela%20para%20Fritura">E-mail</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media"><img src="forma-quadrada-tela-fritura.jpeg" alt="Forma Quadrada com Tela para Fritura" /></div>
+              <div class="card-body">
+                <h4>Forma Quadrada com Tela para Fritura</h4>
+                <p>Fabricada em alumínio, ideal para frituras com melhor drenagem de óleo e maior eficiência no preparo.</p>
+                <div class="actions">
+                  <a class="mini-btn whats" target="_blank" href="https://wa.me/5511958570588?text=Olá! Tenho interesse na Forma Quadrada com Tela para Fritura.">📲 Pedir no WhatsApp</a>
+                  <a class="mini-btn mail" href="mailto:l.prates@hotmail.com?subject=Orçamento%20-%20Forma%20Quadrada%20com%20Tela%20para%20Fritura">E-mail</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media"><img src="forma-quadrada-frente-removivel-30x30x10.jpeg" alt="Forma Quadrada 30x30x10 com Frente Removível" /></div>
+              <div class="card-body">
+                <h4>Forma Quadrada 30x30x10 (Frente Removível)</h4>
+                <p>Estrutura em alumínio com frente removível, ideal para facilitar a retirada de bolos e preparos maiores. Medidas: 30x30x10 cm.</p>
+                <div class="actions">
+                  <a class="mini-btn whats" target="_blank" href="https://wa.me/5511958570588?text=Olá! Tenho interesse na Forma Quadrada 30x30x10 com Frente Removível.">📲 Pedir no WhatsApp</a>
+                  <a class="mini-btn mail" href="mailto:l.prates@hotmail.com?subject=Orçamento%20-%20Forma%20Quadrada%2030x30x10%20com%20Frente%20Removível">E-mail</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="category">
+          <div class="category-head">
+            <h3>Telas e Produtos Técnicos</h3>
+            <span>Linhas para pizza e preparação técnica</span>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <div class="card-media"><img src="tela-pizza-retangular.jpeg" alt="Tela Retangular para Pizza" /></div>
+              <div class="card-body">
+                <h4>Tela Retangular para Pizza</h4>
+                <p>Fabricada em alumínio, ideal para assar pizzas com melhor circulação de calor e crocância uniforme.</p>
+                <div class="actions">
+                  <a class="mini-btn whats" target="_blank" href="https://wa.me/5511958570588?text=Olá! Tenho interesse na Tela Retangular para Pizza.">📲 Pedir no WhatsApp</a>
+                  <a class="mini-btn mail" href="mailto:l.prates@hotmail.com?subject=Orçamento%20-%20Tela%20Retangular%20para%20Pizza">E-mail</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media"><img src="tela-pizza-redonda.jpeg" alt="Tela de Pizza Redonda" /></div>
+              <div class="card-body">
+                <h4>Tela de Pizza Redonda</h4>
+                <p>Fabricada em alumínio, ideal para assar pizzas com distribuição uniforme de calor e melhor crocância.</p>
+                <div class="actions">
+                  <a class="mini-btn whats" target="_blank" href="https://wa.me/5511958570588?text=Olá! Tenho interesse na Tela de Pizza Redonda.">📲 Pedir no WhatsApp</a>
+                  <a class="mini-btn mail" href="mailto:l.prates@hotmail.com?subject=Orçamento%20-%20Tela%20de%20Pizza%20Redonda">E-mail</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="category">
+          <div class="category-head">
+            <h3>Acessórios e Especiais</h3>
+            <span>Complementos para produção e sazonalidade</span>
+          </div>
+          <div class="cards">
+            <article class="card card-pascoa">
+              <div class="card-media pascoa-grid">
+                <img src="aros-pascoa.jpeg" alt="Aros de Páscoa - conjunto de modelos" />
+                <img src="aros-pascoa1.jpeg" alt="Aros de Páscoa - modelo coelho" />
+                <img src="aros-pascoa2.jpeg" alt="Aros de Páscoa - modelos variados" />
+                <img src="aros-pascoa3.jpeg" alt="Aros de Páscoa - coelho em perfil" />
+                <img src="aros-pascoa4.jpeg" alt="Aros de Páscoa - modelos ovais" />
+              </div>
+              <div class="card-body">
+                <h4>Aros de Páscoa</h4>
+                <p>Modelos variados para produção temática de Páscoa. Alta durabilidade e excelente acabamento.</p>
+                <div class="actions">
+                  <a class="mini-btn whats" target="_blank" href="https://wa.me/5511958570588?text=Olá! Tenho interesse nos Aros de Páscoa.">📲 Pedir no WhatsApp</a>
+                  <a class="mini-btn mail" href="mailto:l.prates@hotmail.com?subject=Orçamento%20-%20Aros%20de%20Páscoa">E-mail</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media gallery-two">
+                <img src="luvas-grafitex.jpeg" alt="Luvas Grafitex - modelo 1" />
+                <img src="luvas-grafitex1.jpeg" alt="Luvas Grafitex - modelo 2" />
+              </div>
+              <div class="card-body">
+                <h4>Luvas Grafitex</h4>
+                <p>Proteção térmica e conforto para manuseio de assadeiras e equipamentos quentes. Disponível em cores variadas.</p>
+                <div class="actions">
+                  <a class="mini-btn whats" target="_blank" href="https://wa.me/5511958570588?text=Olá! Tenho interesse nas Luvas Grafitex.">📲 Pedir no WhatsApp</a>
+                  <a class="mini-btn mail" href="mailto:l.prates@hotmail.com?subject=Orçamento%20-%20Luvas%20Grafitex">E-mail</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="diferenciais">
+      <div class="container about-grid">
+        <div class="panel">
+          <h3>Por que escolher a L&amp;L?</h3>
+          <p>Uma apresentação acolhedora, organizada e profissional para transmitir confiança e facilitar o contato com seus clientes.</p>
+          <div class="feature-list">
+            <div class="feature">
+              <div class="feature-icon">01</div>
+              <div>
+                <strong>Atendimento rápido</strong>
+                <span>Contato direto por WhatsApp e e-mail para agilizar pedidos e orçamentos.</span>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">02</div>
+              <div>
+                <strong>Catálogo organizado</strong>
+                <span>Produtos separados por categoria para facilitar a navegação do cliente.</span>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">03</div>
+              <div>
+                <strong>Foco profissional</strong>
+                <span>Site pensado para padarias, confeitarias, pizzarias, lojas e compradores B2B.</span>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">04</div>
+              <div>
+                <strong>Visual elegante</strong>
+                <span>Apresentação bonita, limpa e acolhedora para valorizar sua marca.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" id="contato">
+          <h3>Solicite seu orçamento</h3>
+          <p>Fale com a L&amp;L para consultar tamanhos, disponibilidade e condições de atendimento.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5511958570588?text=Olá! Gostaria%20de%20consultar%20tamanhos%20e%20valores." target="_blank">Falar no WhatsApp</a>
+            <a class="btn btn-secondary" href="mailto:l.prates@hotmail.com?subject=Solicitação%20de%20Orçamento">Enviar e-mail</a>
+          </div>
+          <div class="feature-list">
+            <div class="feature">
+              <div class="feature-icon">📞</div>
+              <div>
+                <strong>WhatsApp</strong>
+                <span>+55 (11) 95857-0588</span>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">✉️</div>
+              <div>
+                <strong>E-mail</strong>
+                <span>l.prates@hotmail.com</span>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🏭</div>
+              <div>
+                <strong>Público</strong>
+                <span>Padarias, confeitarias, pizzarias, lojas e compradores profissionais.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container cta-box">
+        <div>
+          <h3>Quer deixar seu pedido mais rápido?</h3>
+          <p>Envie o nome do produto pelo WhatsApp ou por e-mail e consulte tamanhos, disponibilidade e condições de atendimento.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="https://wa.me/5511958570588?text=Olá! Gostaria%20de%20um%20orçamento." target="_blank">WhatsApp</a>
+          <a class="btn btn-secondary" href="mailto:l.prates@hotmail.com?subject=Consulta%20de%20Produtos">E-mail</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>L&amp;L Comércio de Produtos e Equipamentos para Panificadora LTDA</h4>
+          <p>Catálogo profissional de formas, bandejas, telas e acessórios em alumínio e inox para panificação.</p>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <p><a href="https://wa.me/5511958570588" target="_blank">WhatsApp: +55 (11) 95857-0588</a></p>
+          <p><a href="mailto:l.prates@hotmail.com">l.prates@hotmail.com</a></p>
+        </div>
+        <div>
+          <h4>Navegação</h4>
+          <p><a href="#catalogo">Catálogo</a></p>
+          <p><a href="#diferenciais">Diferenciais</a></p>
+          <p><a href="#contato">Solicitar orçamento</a></p>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        <span>© 2026 L&amp;L Panificação. Todos os direitos reservados.</span>
+        <span>Site institucional com catálogo e atendimento direto.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5511958570588?text=Olá! Gostaria%20de%20um%20orçamento." target="_blank">WhatsApp</a>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-dialog">
+      <button class="lightbox-close" type="button" aria-label="Fechar">×</button>
+      <div class="lightbox-content">
+        <div class="lightbox-thumbs" id="lightboxThumbs"></div>
+        <div class="lightbox-stage">
+          <img id="lightboxMain" src="" alt="Imagem ampliada do produto">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-modal" id="productModal" aria-hidden="true">
+    <div class="product-dialog">
+      <button class="product-close" type="button" aria-label="Fechar">×</button>
+      <div class="product-gallery">
+        <div class="product-gallery-main">
+          <img id="productMainImage" src="" alt="Imagem principal do produto">
+        </div>
+        <div class="product-gallery-thumbs" id="productThumbs"></div>
+      </div>
+      <div class="product-info">
+        <span class="product-chip">Catálogo profissional</span>
+        <h3 id="productTitle"></h3>
+        <p id="productDescription"></p>
+        <ul class="product-points">
+          <li>Consulte tamanhos, disponibilidade e condições diretamente pelo WhatsApp ou e-mail.</li>
+          <li>Ideal para padarias, confeitarias, pizzarias, lojas e compradores profissionais.</li>
+          <li>Apresentação com mais detalhes, galeria e acesso rápido ao atendimento.</li>
+        </ul>
+        <div class="actions" id="productActions"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const showcase = document.getElementById('showcaseCarousel');
+      const prevBtn = document.querySelector('[data-carousel-prev]');
+      const nextBtn = document.querySelector('[data-carousel-next]');
+
+      if (showcase && prevBtn && nextBtn) {
+        const slideBy = () => Math.min(showcase.clientWidth * 0.8, 420);
+        prevBtn.addEventListener('click', () => showcase.scrollBy({ left: -slideBy(), behavior: 'smooth' }));
+        nextBtn.addEventListener('click', () => showcase.scrollBy({ left: slideBy(), behavior: 'smooth' }));
+      }
+
+      const lightbox = document.getElementById('lightbox');
+      const lightboxMain = document.getElementById('lightboxMain');
+      const lightboxThumbs = document.getElementById('lightboxThumbs');
+      const lightboxClose = document.querySelector('.lightbox-close');
+
+      function openLightbox(images, activeIndex) {
+        lightboxThumbs.innerHTML = '';
+        images.forEach((img, index) => {
+          const thumb = document.createElement('img');
+          thumb.src = img.src;
+          thumb.alt = img.alt || '';
+          if (index === activeIndex) thumb.classList.add('active');
+          thumb.addEventListener('click', () => setLightboxImage(images, index));
+          lightboxThumbs.appendChild(thumb);
+        });
+        setLightboxImage(images, activeIndex);
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      }
+
+      function setLightboxImage(images, index) {
+        const selected = images[index];
+        lightboxMain.src = selected.src;
+        lightboxMain.alt = selected.alt || '';
+        [...lightboxThumbs.children].forEach((thumb, i) => {
+          thumb.classList.toggle('active', i === index);
+        });
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+      }
+
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+
+      const productModal = document.getElementById('productModal');
+      const productClose = document.querySelector('.product-close');
+      const productMainImage = document.getElementById('productMainImage');
+      const productThumbs = document.getElementById('productThumbs');
+      const productTitle = document.getElementById('productTitle');
+      const productDescription = document.getElementById('productDescription');
+      const productActions = document.getElementById('productActions');
+
+      function setProductImage(images, index) {
+        const selected = images[index];
+        productMainImage.src = selected.src;
+        productMainImage.alt = selected.alt || '';
+        [...productThumbs.children].forEach((thumb, i) => thumb.classList.toggle('active', i === index));
+      }
+
+      function openProductModal(card) {
+        const images = [...card.querySelectorAll('.card-media img')];
+        const title = card.querySelector('h4')?.textContent || 'Produto';
+        const description = card.querySelector('.card-body p')?.textContent || '';
+        const actionLinks = [...card.querySelectorAll('.actions a')];
+
+        productTitle.textContent = title;
+        productDescription.textContent = description;
+        productActions.innerHTML = '';
+        actionLinks.forEach((link) => productActions.appendChild(link.cloneNode(true)));
+
+        productThumbs.innerHTML = '';
+        images.forEach((img, index) => {
+          const thumb = document.createElement('img');
+          thumb.src = img.src;
+          thumb.alt = img.alt || '';
+          if (index === 0) thumb.classList.add('active');
+          thumb.addEventListener('click', () => setProductImage(images, index));
+          productThumbs.appendChild(thumb);
+        });
+
+        if (images.length) setProductImage(images, 0);
+        productModal.classList.add('is-open');
+        productModal.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeProductModal() {
+        productModal.classList.remove('is-open');
+        productModal.setAttribute('aria-hidden', 'true');
+      }
+
+      productClose.addEventListener('click', closeProductModal);
+      productModal.addEventListener('click', (event) => {
+        if (event.target === productModal) closeProductModal();
+      });
+
+      document.querySelectorAll('.card').forEach((card) => {
+        const quickActions = document.createElement('div');
+        quickActions.className = 'quick-actions';
+
+        const detailsBtn = document.createElement('button');
+        detailsBtn.type = 'button';
+        detailsBtn.className = 'ghost-btn';
+        detailsBtn.textContent = 'Ver detalhes';
+        detailsBtn.addEventListener('click', () => openProductModal(card));
+
+        const images = [...card.querySelectorAll('.card-media img')];
+        images.forEach((img, index) => {
+          img.addEventListener('click', () => openLightbox(images, index));
+        });
+
+        quickActions.appendChild(detailsBtn);
+        const cardBody = card.querySelector('.card-body');
+        if (cardBody) cardBody.appendChild(quickActions);
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeLightbox();
+          closeProductModal();
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
+

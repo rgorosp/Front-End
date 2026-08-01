@@ -1,0 +1,44 @@
+*{
+	margin: 0; /*Remove todos os espaçamentos externos padrão dos elementos */
+	padding: 0; /* Remove os espaçamentos internos */
+	box-sizing: border-box; /* Nao estoura o tamanho da tela */
+}
+
+html,body{
+   background-color: orangered;
+   height: 100%;
+   padding: 5px; 
+}
+
+ul{
+	list-style-position: inside;
+}
+
+/* de acordo com o tipo dos elementos */
+ul li:nth-of-type(2){
+		color: blue;
+}
+
+/*de acordo com os filhos*/
+ul span:nth-child(6){
+		color: green;
+}
+
+.box{
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.item1,.item2,.item3{
+	float: left;
+	margin-left: 12px;
+	width: 32%;
+	height: 400px;
+	background-color: yellowgreen;
+	border: 1px solid black;
+}
+
+.box div:last-of-type{
+	background-color: white;
+}
+

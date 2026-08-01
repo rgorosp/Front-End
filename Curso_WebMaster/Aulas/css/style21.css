@@ -1,0 +1,69 @@
+*{
+	margin: 0; /*Remove todos os espaçamentos externos padrão dos elementos */
+	padding: 0; /* Remove os espaçamentos internos */
+	box-sizing: border-box; /* Nao estoura o tamanho da tela */
+}
+
+html,body{
+   background-color: orangered;
+   height: 100%;
+   padding: 5px; 
+}
+
+.parent{
+	width: 100%;
+	text-align: center;
+	padding: 90px 0;
+	background-color: white;
+	height: 400px;
+}
+
+/* funciona qdo o mouse fica pressionado */
+.parent:active{
+	background-color: magenta;
+}
+
+/* Altera o primeiro texto do 'p' em azul */
+.parent p:first-of-type{
+	color: blue;
+}
+
+/* Altera o ultimo texto do 'p' em amarelo */
+.parent p:last-of-type{
+	color: yellow;
+}
+
+/* Altera o ultimo texto do 'p' em azul fora da div */
+p:last-of-type{
+	color: magenta;
+}
+
+.item1,.item2,.item3,.item4{
+	display: inline-block;
+	margin-left: 5px;
+}
+
+.item1{
+	width: 20%;
+	background-color: green;
+	height: 200px;
+}
+
+.item2{
+	width: 20%;
+	background-color: lime;
+	height: 200px;
+}
+
+.item3{
+	width: 20%;
+	background-color: blue;
+	height: 200px;
+}
+
+.item4{
+	width: 20%;
+	background-color: yellow;
+	height: 200px;
+}
+

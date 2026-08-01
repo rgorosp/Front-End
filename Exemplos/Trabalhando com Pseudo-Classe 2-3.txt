@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- Trabalhando com Pseudo-classes 2/3 -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Curso Front-End - WEBDESIGNER</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<ul>
+		<span>Lista1</span>
+			<li>One</li>
+			<li>Two</li>
+			<li>Three</li>
+			<li>Four</li>
+		<span>Lista2</span>
+	</ul><!-- UL -->
+</body>
+</html>
+
+
+*{ /* Reset da Pagina */
+	margin: 0;
+	padding: 0;
+}
+
+html,body{
+	background-color: white; /* Usado para cor de fundo */
+	height: 100%;
+}
+
+/* "#" Usado para ID e "." Usado para Classe */
+
+ul{
+	list-style-position: inside;
+}
+
+ul li:nth-of-type(2){ /* ataca só as li */
+	color: red;
+}
+
+ul span:nth-child(6){
+	color: blue;
+}

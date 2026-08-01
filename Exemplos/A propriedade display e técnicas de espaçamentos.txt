@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- A propriedade display e técnicas de espaçamentos -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Curso Front-End - WEBDESIGNER</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="centro" class="centro">
+		<div id="lorem" class="lorem">
+			<h2>Lorem Ipsum</h2>
+			<p>Lorem Ipsum é simplesmente um texto fictício da indústria de impressão e composição. Lorem Ipsum tem sido o texto fictício padrão da indústria desde os anos 1500, quando um impressor desconhecido pegou uma galé do tipo e embaralhou para fazer um livro de amostra de tipos. Ele sobreviveu não apenas cinco séculos, mas também ao salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como Aldus PageMaker incluindo versões de Lorem Ipsum.		
+			</p>
+		</div> <!-- lorem -->
+	</div> <!-- centro -->
+	<div id="centro1" class="centro1">
+		<div id="lorem1" class="lorem1">
+			<h2>Lorem Ipsum</h2>
+			<p>Lorem Ipsum é simplesmente um texto fictício da indústria de impressão e composição. Lorem Ipsum tem sido o texto fictício padrão da indústria desde os anos 1500, quando um impressor desconhecido pegou uma galé do tipo e embaralhou para fazer um livro de amostra de tipos. Ele sobreviveu não apenas cinco séculos, mas também ao salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como Aldus PageMaker incluindo versões de Lorem Ipsum.		
+			</p>
+		</div> <!-- lorem -->
+	</div> <!-- centro -->
+	<div id="centro2" class="centro2">
+		<div id="lorem2" class="lorem2">
+			<h2>Lorem Ipsum</h2>
+			<p>Lorem Ipsum é simplesmente um texto fictício da indústria de impressão e composição. Lorem Ipsum tem sido o texto fictício padrão da indústria desde os anos 1500, quando um impressor desconhecido pegou uma galé do tipo e embaralhou para fazer um livro de amostra de tipos. Ele sobreviveu não apenas cinco séculos, mas também ao salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como Aldus PageMaker incluindo versões de Lorem Ipsum.		
+			</p>
+		</div> <!-- lorem -->
+	</div> <!-- centro -->
+</body>
+</html>
+
+
+*{ /* Reset da Pagina */
+	margin: 0;
+	padding: 0;
+}
+
+html,body{
+	background-color: whitesmoke; /* Usado para cor de fundo */
+	height: 100%;
+}
+
+/* # => Usado para ID */
+/* . => Usado para CLASSE */
+/* Se for usar o mesmo nome para as div, usa-se a classe como padrao */
+
+.centro,.centro1,.centro2{
+	box-sizing: content-box;
+	width: 1280px;
+	margin: 0 auto;
+	background-color: gray;
+}
+
+#lorem,#lorem1,#lorem2{
+	box-sizing: border-box;
+	border: 3px solid rgba(255, 255, 255, 1);
+	vertical-align: top;
+	display: inline-block; /* retira o espaçamento */
+	margin-right: -2px;
+	margin-top: 30px;
+	width: 640px; /* largura */
+
+}

@@ -1,0 +1,23 @@
+*{
+	border: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background: green;
+}
+
+.menu{
+	background: red;
+	width: 400px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.menu > a{
+	color: black;
+	font-size: 15px;
+	margin: 15px;
+	text-decoration: none;
+}

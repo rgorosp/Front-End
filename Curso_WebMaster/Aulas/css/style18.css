@@ -1,0 +1,28 @@
+*{
+	margin: 0; /*Remove todos os espaçamentos externos padrão dos elementos */
+	padding: 0; /* Remove os espaçamentos internos */
+	box-sizing: border-box; /* Nao estoura o tamanho da tela */
+}
+
+html,body{
+   background-color: darkgreen;
+   height: 100%;
+   padding: 5px;
+}
+
+.bg{
+	width: 100%;
+	background-color: orange;
+	height: 30%;
+	background-image: url('../imagens/cobol.png');
+	background-repeat: no-repeat;
+	background-position: 10%;
+	object-fit: cover; /* mantém a proporção sem cortar */
+   overflow: hidden; /* impede a imagem de vazar da caixa */
+}
+
+.box{
+	width: 100%;
+	height: 500px;
+	background-color: lime;
+}

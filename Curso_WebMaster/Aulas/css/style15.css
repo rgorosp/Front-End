@@ -1,0 +1,29 @@
+*{
+	margin: 0; /*Remove todos os espaçamentos externos padrão dos elementos */
+	padding: 0; /* Remove os espaçamentos internos */
+	box-sizing: border-box; /* Nao estoura o tamanho da tela */
+}
+
+html,body{
+	background-color: aquamarine;
+/*   display: grid; /* Isso permite usar o sistema de layout moderno do CSS para alinhar elementos */
+   height: 100%;
+ /*   place-items: center; */
+    padding: 5px;
+}
+
+
+/* PROCURA POR UMA PARTE DO ARQUIVO */
+a[attr^="goo"]{
+	background-color: orange;
+}
+
+/* PROCURA A PALAVRA E ALTERA TUDO */
+a[href*=globo]{
+	background-color: green;
+}
+
+/* PROCURA PELO NOME COMPLETO */
+a[href="www.dankicode.com"]{
+	background-color: darkblue;
+}
