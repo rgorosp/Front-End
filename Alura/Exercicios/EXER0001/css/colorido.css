@@ -1,0 +1,78 @@
+/* Estilo Colorido e Divertido */
+body {
+    background: linear-gradient(135deg, #ff9a8b, #ff6a88, #ff99ac, #fbc687);
+    color: #2d2d2d;
+    font-family: 'Comic Sans MS', 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffde59;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 6px dashed #ff6a88;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #ff2e63;
+    text-shadow: 2px 2px 0 #fff;
+}
+
+main {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 30px;
+}
+
+main h1 {
+    font-size: 1.8rem;
+    color: #6a2c70;
+}
+
+main h1 strong {
+    color: #08d9d6;
+}
+
+main p {
+    font-size: 1.3rem;
+    color: #6a2c70;
+}
+
+main a {
+    display: inline-block;
+    margin: 15px;
+    padding: 12px 30px;
+    background-color: #08d9d6;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 0 #05a6a3;
+    transition: transform 0.2s ease;
+}
+
+main a:hover {
+    transform: translateY(-4px) rotate(-2deg);
+    background-color: #ff2e63;
+    box-shadow: 0 6px 0 #b3103f;
+}
+
+main img {
+    display: block;
+    margin: 30px auto;
+    border-radius: 50%;
+    border: 6px solid #ffde59;
+    box-shadow: 0 0 0 6px #ff6a88;
+}
+
+footer {
+    background-color: #6a2c70;
+    height: 60px;
+    border-top: 6px dashed #ffde59;
+}

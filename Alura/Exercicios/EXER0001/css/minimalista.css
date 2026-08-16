@@ -1,0 +1,67 @@
+/* Estilo Minimalista e Limpo */
+body {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+header {
+    padding: 30px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eaeaea;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+main {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+main h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #1a1a1a;
+}
+
+main h1 strong {
+    font-weight: 600;
+}
+
+main p {
+    font-size: 1rem;
+    color: #666666;
+}
+
+main a {
+    display: inline-block;
+    margin: 10px 20px 10px 0;
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 2px;
+}
+
+main a:hover {
+    color: #666666;
+    border-bottom-color: #666666;
+}
+
+main img {
+    display: block;
+    margin-top: 30px;
+    max-width: 100%;
+}
+
+footer {
+    height: 40px;
+    border-top: 1px solid #eaeaea;
+}
