@@ -1,4 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+} /* RESETAR MARGEM e PRENCHIMENTO */
+
 body{
+    box-sizing: border-box;
+    height: 100vh;
     background-color: indigo;
     color: white;
+}
+
+.apresentacao__conteudo{
+    width: 100%;
+}
+
+.titulo-blog{
+    color: rebeccapurple
+}
+
+.Titulo{
+    margin-top: 4%;
+    font-family: 'font-family: "Krona One", sans-serif';
+    font-size: 40px;
+}
+
+.texto-destaque{
+    color: blue;
+}
+
+.urgente{
+    color: red;
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+    margin: 2%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.apresentacao__conteudo__link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.apresentacao__conteudo__link__b{
+    background-color: brown;
 }

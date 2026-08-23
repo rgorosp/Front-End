@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="./ds-styles.css">
+  <style>
+    body{margin:0}
+    a{color:var(--color-accent-700)}
+    a:hover{color:var(--color-accent)}
+    ::selection{background:color-mix(in srgb, var(--color-accent) 30%, transparent)}
+    .container{max-width:1180px;margin:0 auto;padding-inline:var(--space-6)}
+    [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.16,.84,.44,1),transform .8s cubic-bezier(.16,.84,.44,1)}
+    [data-reveal].is-in{opacity:1;transform:translateY(0)}
+    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .marquee-track{display:flex;gap:var(--space-8);width:max-content;animation:marquee 26s linear infinite}
+    .prod-card{transition:transform .35s ease,box-shadow .35s ease}
+    .prod-card:hover{transform:translateY(-6px)}
+    .prod-card:hover .prod-plate img{transform:scale(1.06)}
+    .prod-plate img{transition:transform .6s ease}
+    .cat-btn{cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease}
+    @media (max-width:900px){
+      .hero-grid,.produtos-grid,.diferenciais-grid,.depo-wrap,.cta-grid,.steps-grid{grid-template-columns:1fr !important}
+      .nav-links{display:none !important}
+    }
+  </style>
+</helmet>
+
+<div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);min-height:100vh;overflow-x:hidden">
+
+  <div class="nav" style="position:fixed;top:0;left:0;right:0;z-index:20;border-bottom:1px solid var(--color-divider);{{ navStyle }}">
+    <div class="container" style="display:flex;align-items:center;gap:var(--space-4);width:100%">
+      <div class="nav-brand" style="{{ navTextStyle }}">Formas de Alumínio</div>
+      <div class="nav-links" style="display:flex;gap:var(--space-4);margin-left:var(--space-6);{{ navTextStyle }}">
+        <a href="#produtos">Produtos</a>
+        <a href="#modelo-3d">Em detalhe</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#depoimentos">Depoimentos</a>
+      </div>
+      <a class="btn" style="margin-left:auto;background:var(--color-accent-600);border-color:var(--color-accent-600);color:#fff;font-weight:700" href="{{ waLink }}" target="_blank" rel="noopener"><span dangerouslySetInnerHTML="{{ iconWhatsapp }}"></span>Falar no WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div ref="{{ heroRef }}" style="position:relative;background:var(--color-neutral-900);color:var(--color-neutral-100);padding-top:calc(var(--space-8) * 2.2);padding-bottom:var(--space-8);overflow:hidden">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 75% 20%, color-mix(in srgb, var(--color-accent) 22%, transparent), transparent 60%)"></div>
+    <div class="container hero-grid" style="position:relative;display:grid;grid-template-columns:1.05fr 1fr;gap:var(--space-8);align-items:center">
+      <div data-reveal="">
+        <span class="tag tag-outline" style="border-color:var(--color-accent-400);color:var(--color-accent-300)">Atacado · Revenda B2B · Todo o Brasil</span>
+        <h1 style="margin-top:var(--space-3);font-size:clamp(36px,4.4vw,56px);font-weight:400;color:var(--color-accent-100)">Equipamentos de alumínio e inox para quem produz todos os dias</h1>
+        <p style="font-size:17px;max-width:52ch;opacity:0.82">Formas, assadeiras, bandejas inox, telas para pizza e acessórios para sua padaria, confeitaria ou pizzaria produzir mais, com padrão, agilidade e durabilidade.</p>
+        <div style="display:flex;gap:var(--space-3);margin-top:var(--space-4);flex-wrap:wrap">
+          <a class="btn btn-primary" href="#contato" style="border-color:var(--color-accent-400);color:var(--color-accent-300)">Solicitar orçamento</a>
+          <a class="btn" href="{{ waLink }}" target="_blank" rel="noopener" style="border-color:var(--color-accent-400);color:var(--color-neutral-900);background:var(--color-accent-300);font-weight:700"><span dangerouslySetInnerHTML="{{ iconWhatsapp }}"></span>Falar no WhatsApp</a>
+        </div>
+        <p style="font-size:13px;margin-top:var(--space-4);opacity:0.6">Pedido mínimo de {{ minOrderLabel }} · Entrega para todo o Brasil · Atendimento a indústria e revenda</p>
+      </div>
+      <div ref="{{ heroImgWrapRef }}" style="perspective:1000px">
+        <div ref="{{ heroImgRef }}" class="plate" style="transform-style:preserve-3d;will-change:transform;box-shadow:var(--shadow-lg)">
+          <img src="./assets/banner-premium-clean.webp" alt="Linha profissional de equipamentos de alumínio para panificação" style="width:100%;height:380px;object-fit:cover;display:block">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARQUEE -->
+  <div style="background:var(--color-surface);border-bottom:1px solid var(--color-divider);padding-block:var(--space-3);overflow:hidden">
+    <div class="marquee-track">
+      <sc-for list="{{ marqueeItems }}" as="m" hint-placeholder-count="10">
+        <span style="font-family:var(--font-heading);font-size:14px;letter-spacing:0.04em;color:var(--color-accent-700);white-space:nowrap">{{ m }}</span>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- DIFERENCIAIS -->
+  <div class="container" id="diferenciais" style="padding-block:var(--space-8)">
+    <h6 style="color:var(--color-accent-700)" data-reveal="">Por que comprar da Formas de Alumínio</h6>
+    <h2 style="font-weight:400;margin-bottom:var(--space-6)" data-reveal="">Feito para sustentar sua produção</h2>
+    <div class="diferenciais-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-4)">
+      <sc-for list="{{ diferenciais }}" as="d" hint-placeholder-count="5">
+        <div class="card" data-reveal="" style="transition-delay:{{ d.delay }}">
+          <span class="tag tag-accent">{{ d.tag }}</span>
+          <div class="card-title">{{ d.title }}</div>
+          <p class="card-body">{{ d.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <hr class="hr">
+
+  <!-- 3D SHOWCASE -->
+  <div id="modelo-3d" style="background:var(--color-neutral-900);color:var(--color-neutral-100);padding-block:var(--space-8)">
+    <div class="container" style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:var(--space-8);align-items:center" class="hero-grid">
+      <div data-reveal="">
+        <h6 style="color:var(--color-accent-400)">Veja de perto</h6>
+        <h2 style="font-weight:400;color:var(--color-accent-100)">Um modelo 3D da nossa forma suíça, girável</h2>
+        <p style="opacity:0.75;max-width:44ch">Arraste para girar, use a roda do mouse para aproximar. É a mesma qualidade construtiva que chega até sua produção.</p>
+      </div>
+      <div class="plate elev-lg" data-reveal="" style="height:460px;overflow:hidden">
+        <iframe src="./tray-3d.html" title="Modelo 3D da assadeira de alumínio" style="width:100%;height:100%;border:0;display:block;background:#14100c"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <hr class="hr">
+
+  <!-- PRODUTOS -->
+  <div class="container" id="produtos" style="padding-block:var(--space-8)">
+    <h6 style="color:var(--color-accent-700)" data-reveal="">Linha completa</h6>
+    <h2 style="font-weight:400;margin-bottom:var(--space-4)" data-reveal="">Produtos para padaria, confeitaria e pizzaria</h2>
+    <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-6)" data-reveal="">
+      <sc-for list="{{ categorias }}" as="c" hint-placeholder-count="4">
+        <button class="btn cat-btn {{ c.activeClass }}" onClick="{{ c.onClick }}">{{ c.label }}</button>
+      </sc-for>
+    </div>
+    <div class="produtos-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6)">
+      <sc-for list="{{ produtosFiltrados }}" as="p" hint-placeholder-count="4">
+        <div class="prod-card">
+          <div class="plate prod-plate" style="overflow:hidden">
+            <img src="{{ p.img }}" alt="{{ p.title }}" style="width:100%;height:200px;object-fit:cover;display:block">
+          </div>
+          <div class="card-title" style="margin-top:var(--space-3)">{{ p.title }}</div>
+          <p class="card-body" style="opacity:0.8">{{ p.body }}</p>
+          <a class="btn btn-ghost" href="#contato">Ver opções e preços →</a>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <hr class="hr">
+
+  <!-- COMO FUNCIONA -->
+  <div class="container" style="padding-block:var(--space-8)">
+    <h6 style="color:var(--color-accent-700)" data-reveal="">Como funciona</h6>
+    <h2 style="font-weight:400;margin-bottom:var(--space-6)" data-reveal="">Do orçamento à sua produção</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6)" class="steps-grid">
+      <sc-for list="{{ passos }}" as="s" hint-placeholder-count="3">
+        <div style="display:flex;gap:var(--space-3)" data-reveal="">
+          <div style="font-family:var(--font-heading);font-size:36px;color:var(--color-accent-300);font-variant-numeric:tabular-nums">{{ s.n }}</div>
+          <div>
+            <div class="card-title">{{ s.title }}</div>
+            <p class="card-body">{{ s.body }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <hr class="hr">
+
+  <!-- DEPOIMENTOS -->
+  <div class="container" id="depoimentos" style="padding-block:var(--space-8)">
+    <h6 style="color:var(--color-accent-700)" data-reveal="">Quem já compra com a gente</h6>
+    <h2 style="font-weight:400;margin-bottom:var(--space-6)" data-reveal="">Depoimentos de clientes</h2>
+    <div class="depo-wrap" style="position:relative;overflow:hidden" data-reveal="">
+      <div style="display:flex;transition:transform .5s cubic-bezier(.16,.84,.44,1);{{ depoTrackStyle }}">
+        <sc-for list="{{ depoimentos }}" as="t" hint-placeholder-count="3">
+          <div style="flex:0 0 100%;padding-inline:2px">
+            <div class="card elev-sm" style="max-width:560px;margin:0 auto">
+              <p class="card-body" style="font-style:italic;font-size:16px">"{{ t.quote }}"</p>
+              <div class="card-meta">
+                <span style="font-family:var(--font-heading);font-weight:600;color:var(--color-text)">{{ t.name }}</span>
+                <span>— {{ t.role }}</span>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;justify-content:center;gap:var(--space-3);margin-top:var(--space-4)">
+        <button class="btn btn-icon btn-secondary" onClick="{{ prevDepo }}" aria-label="Anterior" dangerouslySetInnerHTML="{{ iconChevronLeft }}"></button>
+        <button class="btn btn-icon btn-secondary" onClick="{{ nextDepo }}" aria-label="Próximo" dangerouslySetInnerHTML="{{ iconChevronRight }}"></button>
+      </div>
+    </div>
+  </div>
+
+  <hr class="hr">
+
+  <!-- CTA / FORM -->
+  <div class="container" id="contato" style="padding-block:var(--space-8)">
+    <div class="cta-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8)">
+      <div data-reveal="">
+        <h2 style="font-weight:400">Pronto para abastecer sua produção?</h2>
+        <p style="max-width:44ch;opacity:0.85">Envie os dados abaixo e nossa equipe monta um orçamento sob medida para o seu volume de produção. Pedido mínimo de {{ minOrderLabel }} para revenda e indústria.</p>
+        <ul style="padding-left:18px;opacity:0.85;font-size:14px;line-height:1.8">
+          <li>Resposta em até 1 dia útil</li>
+          <li>Atendimento técnico especializado</li>
+          <li>Entrega para todo o Brasil</li>
+        </ul>
+        <a class="btn btn-secondary" href="{{ waLink }}" target="_blank" rel="noopener">Prefere WhatsApp? Fale agora</a>
+      </div>
+      <form class="card elev-md" onSubmit="{{ handleSubmit }}" style="gap:var(--space-3)" data-reveal="">
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:var(--space-4) 0;text-align:center">
+            <div class="card-title">Recebemos sua solicitação!</div>
+            <p class="card-body">Nosso time entra em contato em breve.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+          <div class="field">
+            <label for="f-nome">Nome</label>
+            <input class="input" id="f-nome" required="{{ true }}">
+          </div>
+          <div class="field">
+            <label for="f-empresa">Empresa</label>
+            <input class="input" id="f-empresa" required="{{ true }}">
+          </div>
+          <div class="field">
+            <label for="f-whats">WhatsApp</label>
+            <input class="input" id="f-whats" required="{{ true }}">
+          </div>
+          <div class="field">
+            <label for="f-cidade">Cidade / UF</label>
+            <input class="input" id="f-cidade" required="{{ true }}">
+          </div>
+          <div class="field">
+            <label for="f-msg">O que você precisa?</label>
+            <textarea class="input" id="f-msg" rows="3"></textarea>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Solicitar orçamento</button>
+        </sc-if>
+      </form>
+    </div>
+  </div>
+
+  <hr class="hr">
+
+  <!-- FOOTER -->
+  <div class="container" style="padding-block:var(--space-6);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-3)">
+    <div class="text-muted" style="font-size:13px">© {{ year }} Formas de Alumínio. Todos os direitos reservados.</div>
+    <div class="text-muted" style="font-size:13px">Atendimento a todo o Brasil · Indústria e revenda</div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{},&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;5511999999999&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contato&quot;},&quot;minOrderValue&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:500,&quot;tsType&quot;:&quot;number&quot;,&quot;min&quot;:100,&quot;max&quot;:5000,&quot;step&quot;:50,&quot;section&quot;:&quot;Contato&quot;}}">
+class Component extends DCLogic {
+  state = { submitted: false, scrolled: false, activeCat: 'todos', depoIndex: 0 };
+
+  heroRef = React.createRef();
+  heroImgWrapRef = React.createRef();
+  heroImgRef = React.createRef();
+
+  icons = {
+    chevronLeft: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>',
+    chevronRight: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>',
+    whatsapp: '<svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.15-4.9-4.34-.14-.19-1.17-1.55-1.17-2.96 0-1.4.74-2.09 1-2.38.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.16-.19.7-.81.89-1.09.19-.28.37-.23.62-.14.26.1 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.68-.17 1.36Z"/></svg>'
+  };
+
+  produtos = [
+    { cat: 'formas', img: './assets/forma-fundo-removivel.webp', title: 'Forma redonda fundo removível', body: 'Facilita o desenformar sem danificar o produto.' },
+    { cat: 'formas', img: './assets/forma-quadrada-removivel.webp', title: 'Forma quadrada 30x30x10', body: 'Frente removível para bolos e tortas altas.' },
+    { cat: 'formas', img: './assets/forma-suica.webp', title: 'Forma suíça', body: 'Formato tradicional, acabamento resistente.' },
+    { cat: 'formas', img: './assets/forma-broa.webp', title: 'Forma para broa', body: 'Ideal para produção contínua de pães regionais.' },
+    { cat: 'formas', img: './assets/forma-pao-de-mel.webp', title: 'Forma para pão de mel', body: 'Múltiplas cavidades para alta produtividade.' },
+    { cat: 'formas', img: './assets/forma-fundo-falso.webp', title: 'Forma redonda fundo falso', body: 'Base solta para bolos e tortas de confeitaria.' },
+    { cat: 'formas', img: './assets/forma-tela-fritura.webp', title: 'Forma quadrada com tela', body: 'Combina forma e tela para fritura uniforme.' },
+    { cat: 'assadeiras', img: './assets/assadeira-master.webp', title: 'Assadeira master perfurada', body: 'Perfuração para assamento uniforme em forno industrial.' },
+    { cat: 'assadeiras', img: './assets/assadeira-brownie.webp', title: 'Assadeira para brownie', body: 'Bordas retas, alta durabilidade para uso diário.' },
+    { cat: 'bandejas', img: './assets/bandeja-canto-liso.webp', title: 'Bandeja inox canto liso', body: 'Higiênica, fácil de limpar e empilhar.' },
+    { cat: 'bandejas', img: './assets/bandeja-canto-vazado.webp', title: 'Bandeja inox canto vazado', body: 'Ventilação para exposição e transporte de produtos.' },
+    { cat: 'acessorios', img: './assets/cortador-pascoa.webp', title: 'Cortadores de Páscoa', body: 'Kit sazonal em aço inox para confeitaria.' },
+    { cat: 'acessorios', img: './assets/cortador-pascoa2.webp', title: 'Cortadores decorativos', body: 'Diversos formatos para linhas temáticas.' }
+  ];
+
+  componentDidMount() {
+    this._onScroll = () => this.setState({ scrolled: window.scrollY > 24 });
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+
+    const wrap = this.heroImgWrapRef.current;
+    const img = this.heroImgRef.current;
+    if (wrap && img) {
+      this._onMove = (e) => {
+        const r = wrap.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        img.style.transform = `rotateY(${px * 14}deg) rotateX(${-py * 14}deg) scale(1.02)`;
+      };
+      this._onLeave = () => { img.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)'; };
+      wrap.addEventListener('mousemove', this._onMove);
+      wrap.addEventListener('mouseleave', this._onLeave);
+    }
+
+    this._observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('is-in'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('[data-reveal]').forEach((el) => this._observer.observe(el));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    if (this._observer) this._observer.disconnect();
+    const wrap = this.heroImgWrapRef.current;
+    if (wrap) {
+      wrap.removeEventListener('mousemove', this._onMove);
+      wrap.removeEventListener('mouseleave', this._onLeave);
+    }
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.setState({ submitted: true });
+  };
+
+  setCat = (cat) => this.setState({ activeCat: cat });
+  prevDepo = () => this.setState((s) => ({ depoIndex: (s.depoIndex + 2) % 3 }));
+  nextDepo = () => this.setState((s) => ({ depoIndex: (s.depoIndex + 1) % 3 }));
+
+  renderVals() {
+    const wa = (this.props.whatsappNumber || '5511999999999').replace(/\D/g, '');
+    const minOrder = this.props.minOrderValue ?? 500;
+    const cats = [
+      { key: 'todos', label: 'Todos' },
+      { key: 'formas', label: 'Fôrmas' },
+      { key: 'assadeiras', label: 'Assadeiras' },
+      { key: 'bandejas', label: 'Bandejas inox' },
+      { key: 'acessorios', label: 'Acessórios' }
+    ];
+    const produtosFiltrados = this.state.activeCat === 'todos'
+      ? this.produtos
+      : this.produtos.filter((p) => p.cat === this.state.activeCat);
+
+    return {
+      waLink: `https://wa.me/${wa}?text=${encodeURIComponent('Olá! Quero um orçamento de formas e equipamentos.')}`,
+      minOrderLabel: `R$ ${minOrder}`,
+      year: new Date().getFullYear(),
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      handleSubmit: this.handleSubmit,
+      heroRef: this.heroRef,
+      heroImgWrapRef: this.heroImgWrapRef,
+      heroImgRef: this.heroImgRef,
+      navStyle: this.state.scrolled
+        ? 'background:color-mix(in srgb, var(--color-bg) 92%, transparent);backdrop-filter:blur(8px)'
+        : 'background:transparent;border-bottom-color:transparent',
+      navTextStyle: this.state.scrolled ? 'color:var(--color-accent-700)' : 'color:var(--color-accent-300)',
+      iconChevronLeft: { __html: this.icons.chevronLeft },
+      iconChevronRight: { __html: this.icons.chevronRight },
+      iconWhatsapp: { __html: this.icons.whatsapp },
+      marqueeItems: ['Fôrmas de alumínio', 'Assadeiras profissionais', 'Bandejas inox', 'Telas para pizza', 'Cortadores', 'Sob medida', 'Entrega para todo o Brasil', 'Fôrmas de alumínio', 'Assadeiras profissionais', 'Bandejas inox', 'Telas para pizza', 'Cortadores', 'Sob medida', 'Entrega para todo o Brasil'],
+      diferenciais: [
+        { tag: '01', title: 'Preço competitivo', body: 'Condições especiais para volume de revenda e indústria.', delay: '0ms' },
+        { tag: '02', title: 'Entrega rápida', body: 'Despacho para todo o Brasil, com prazos previsíveis.', delay: '60ms' },
+        { tag: '03', title: 'Durabilidade', body: 'Alumínio e inox de alta resistência para uso intenso.', delay: '120ms' },
+        { tag: '04', title: 'Sob medida', body: 'Formas e bandejas personalizadas para sua linha de produção.', delay: '180ms' },
+        { tag: '05', title: 'Atendimento técnico', body: 'Time especializado para indicar o equipamento certo.', delay: '240ms' }
+      ],
+      categorias: cats.map((c) => ({
+        label: c.label,
+        onClick: () => this.setCat(c.key),
+        activeClass: this.state.activeCat === c.key ? 'btn-primary' : 'btn-secondary'
+      })),
+      produtosFiltrados,
+      passos: [
+        { n: '01', title: 'Solicite o orçamento', body: 'Conte o volume e os itens que sua produção precisa.' },
+        { n: '02', title: 'Fechamos as condições', body: 'Pedido mínimo de R$ 500 para revenda e indústria.' },
+        { n: '03', title: 'Receba em todo o Brasil', body: 'Despacho rápido e acompanhamento do pedido.' }
+      ],
+      depoTrackStyle: `transform:translateX(-${this.state.depoIndex * 100}%)`,
+      prevDepo: this.prevDepo,
+      nextDepo: this.nextDepo,
+      depoimentos: [
+        { quote: 'Equipamentos resistentes e entrega no prazo. Nossa padaria não para.', name: 'Marcos Silva', role: 'Padaria Pão Nosso' },
+        { quote: 'Preço justo para revenda e atendimento que resolve rápido.', name: 'Camila Rocha', role: 'Distribuidora CR Equipamentos' },
+        { quote: 'As formas sob medida encaixaram perfeito na nossa linha.', name: 'João Pereira', role: 'Confeitaria Doce Ponto' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
