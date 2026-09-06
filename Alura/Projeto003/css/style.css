@@ -20,7 +20,7 @@ body{
     display: flex; /*  organizar os elementos  */
     align-items: center; /* ALINHA OS ITENS */
     justify-content: space-between; /* Da espaço entre os elementos */
-    margin: 10%;
+    margin: 10% 15%;
 }
 
 .principal__conteudo{
@@ -39,22 +39,32 @@ body{
 }
 
 .links{
-    margin-top: 2%;
+    margin-top: 2%; 
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.links_subtitulo{
+    font-family: 'Krona One',sans-serif;
+    font-size: 15px;
+    font-weight: 400;
 }
 
 .links__a{
-    background-color: aquamarine;
-    width: 280px;
+    /* background-color: aquamarine; */
+    width: 380px;
     height: 40px;
     display: flex; /* ATIVA O FLEXBOX NO BOTÃO */
     align-items: center; /* CENTRALIZA VERTICALMENTE */
     justify-content: center; /* CENTRALIZA HORIZONTALMENTE */
-    border-radius: 16px; /* ARREDONDAMENTO DAS BORDAS */
+    gap: 16px; /* ESPAÇO ENTRE O ÍCONE E O TEXTO */
+    border-radius: 8px; /* ARREDONDAMENTO DAS BORDAS */
     font-size: 24px;
     text-decoration: none;
-    color: black;
+    color: white;
     margin-top: 1%;
+    border: 2px solid aqua;
 }

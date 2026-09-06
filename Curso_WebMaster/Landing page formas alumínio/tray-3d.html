@@ -40,16 +40,21 @@ const group = new T.Group();
 const metal = new T.MeshStandardMaterial({ color: 0xd6d8db, metalness: 0.38, roughness: 0.4, name: 'aluminio-fosco', side: T.DoubleSide });
 const metalBrushed = new T.MeshStandardMaterial({ color: 0xbfc2c6, metalness: 0.34, roughness: 0.55, name: 'aluminio-escovado', side: T.DoubleSide });
 
-// "forma suíça" — round tube/bundt pan with a center cone, built as a single
-// lathe profile (apex -> cone base -> bottom -> inner wall -> rolled rim -> outer wall -> outer base)
+// "forma suíça" — cup-shaped ring pan, built as a lathe profile (inner
+// floor -> inner wall -> rolled rim -> outer wall -> outer base). The
+// center cone is a separate CylinderGeometry: LatheGeometry smooths
+// normals along the whole profile, which turned a flat-topped cone into
+// a rounded dome — a cylinder's caps keep their own crisp, unsmoothed
+// edges instead.
 const profile = [
-  new T.Vector2(0.0, 0.045),
-  new T.Vector2(0.03, 0.004),
-  new T.Vector2(0.055, 0.0),
-  new T.Vector2(0.095, 0.0),
-  new T.Vector2(0.115, 0.058),
-  new T.Vector2(0.122, 0.062),
-  new T.Vector2(0.108, 0.0)
+  new T.Vector2(0.06, 0.0),
+  new T.Vector2(0.085, 0.0),
+  new T.Vector2(0.09, 0.006),
+  new T.Vector2(0.114, 0.1),
+  new T.Vector2(0.124, 0.108),
+  new T.Vector2(0.128, 0.1),
+  new T.Vector2(0.118, 0.01),
+  new T.Vector2(0.1, 0.0)
 ];
 const lathe = new T.LatheGeometry(profile, 64);
 const pan = new T.Mesh(lathe, metalBrushed);
@@ -57,8 +62,16 @@ pan.name = 'forma_suica';
 pan.castShadow = true; pan.receiveShadow = true;
 group.add(pan);
 
+// center cone: flat-topped frustum, sitting base-down on the inner floor
+const coneGeo = new T.CylinderGeometry(0.045, 0.06, 0.045, 64);
+const cone = new T.Mesh(coneGeo, metalBrushed);
+cone.position.y = 0.0225;
+cone.name = 'cone_central';
+cone.castShadow = true; cone.receiveShadow = true;
+group.add(cone);
+
 // bottom cap to close the underside
-const capGeo = new T.CircleGeometry(0.108, 64);
+const capGeo = new T.CircleGeometry(0.1, 64);
 const cap = new T.Mesh(capGeo, metal);
 cap.rotation.x = Math.PI / 2;
 cap.position.y = 0.0005;
