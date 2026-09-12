@@ -7,9 +7,18 @@
 
 body{
     box-sizing: border-box; /* NAO SAIR OS ELEMENTOS DA TELA */
-    height: 100vh; /* ALTURA  DA TELA */
+    /* height: 100vh; /* ALTURA  DA TELA */
     background-color: #68150A;
     color: #D6976F;
+}
+
+.cabecalho{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    text-align: left;
+    background-color: #0a0706; /* COR DE FUNDO DO CABEÇALHO */
+    margin: 0; /* REMOVE MARGEM EXTERNA */
+    padding: 10px 0; /* ADICIONA ESPAÇAMENTO INTERNO NO TOPO E NA BASE */
 }
 
 .titulo{    
@@ -20,8 +29,9 @@ body{
     display: flex; /*  organizar os elementos  */
     align-items: center; /* ALINHA OS ITENS */
     justify-content: space-between; /* Da espaço entre os elementos */
-    margin: 10% 15%;
-}
+    /*margin: 10% 15%; */
+    padding: 3% 5%;
+} /* FECHA .principal */
 
 .principal__conteudo{
     width: 615px;
@@ -67,4 +77,18 @@ body{
     color: white;
     margin-top: 1%;
     border: 2px solid aqua;
+}
+
+.links__a:hover{ /* EFEITO AO PASSAR O MOUSE */
+    background-color: aqua;
+    color: black;
+}
+
+.footer__texto{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+    background-color: #0a0706;
+    padding: 10px 0; /* ADICIONA ESPAÇAMENTO INTERNO NO TOPO E NA BASE */
 }
