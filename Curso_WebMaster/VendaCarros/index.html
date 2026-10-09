@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Marcio Nunes | Carros Usados</title>
+	<style>
+		* { box-sizing: border-box; }
+		body { margin: 0; font-family: Arial, sans-serif; background: #f4f6f8; color: #172033; }
+		header { background: #102a43; color: #fff; padding: 24px 8%; display: flex; align-items: center; justify-content: space-between; }
+		.logo { font-size: 2rem; font-weight: 800; letter-spacing: 1px; }
+		.logo span { color: #f5a623; }
+		nav a { color: #fff; text-decoration: none; margin-left: 22px; font-weight: bold; }
+		.hero { padding: 70px 8%; text-align: center; background: linear-gradient(135deg, #163b5c, #236d8f); color: #fff; }
+		.hero h1 { margin: 0; font-size: clamp(2.2rem, 5vw, 4rem); }
+		.hero p { font-size: 1.15rem; margin: 16px 0 28px; }
+		.hero a { display: inline-block; background: #f5a623; color: #172033; padding: 14px 24px; border-radius: 6px; font-weight: bold; text-decoration: none; }
+		main { max-width: 1100px; margin: 42px auto; padding: 0 20px; }
+		h2 { font-size: 1.8rem; margin-bottom: 20px; }
+		.tabela { width: 100%; border-collapse: collapse; background: #fff; box-shadow: 0 4px 18px rgba(0,0,0,.08); border-radius: 8px; overflow: hidden; }
+		th { background: #102a43; color: #fff; text-align: left; }
+		th, td { padding: 16px; border-bottom: 1px solid #e7ebef; }
+		tr:last-child td { border-bottom: none; }
+		tr:hover { background: #f8fafc; }
+		.preco { color: #16824a; font-weight: bold; }
+		.botao { background: #236d8f; color: #fff; padding: 9px 13px; border-radius: 5px; text-decoration: none; font-size: .9rem; font-weight: bold; }
+		.formulario-carro { margin-top: 36px; padding: 26px; background: #fff; border-radius: 8px; box-shadow: 0 4px 18px rgba(0,0,0,.08); }
+		.campos-carro { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+		.campo { display: flex; flex-direction: column; gap: 6px; font-weight: bold; }
+		.campo input, .campo select { padding: 11px; border: 1px solid #cbd5e1; border-radius: 5px; font: inherit; }
+		.formulario-carro button { margin-top: 20px; border: 0; cursor: pointer; }
+		footer { text-align: center; padding: 24px; background: #102a43; color: #dce5ed; }
+		@media (max-width: 650px) {
+			header { flex-direction: column; gap: 15px; }
+			nav a { margin: 0 8px; }
+			.tabela { font-size: .85rem; }
+			th, td { padding: 10px 7px; }
+			th:nth-child(3), td:nth-child(3) { display: none; }
+			.campos-carro { grid-template-columns: 1fr; }
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="logo">MARCIO <span>NUNES</span></div>
+		<nav>
+			<a href="#carros">Carros</a>
+			<a href="#contato">Contato</a>
+		</nav>
+	</header>
+
+	<section class="hero">
+		<h1>Seu próximo carro está aqui</h1>
+		<p>Veículos usados selecionados, revisados e prontos para você.</p>
+		<a href="#carros">Ver carros disponíveis</a>
+	</section>
+
+	<main id="carros">
+		<h2>Carros em destaque</h2>
+		<div id="tabela-carros"></div>
+
+		<form class="formulario-carro" action="/carros" method="post">
+			<h2>Enviar carro para cadastro</h2>
+			<div class="campos-carro">
+				<label class="campo">Modelo
+					<input type="text" name="modelo" required>
+				</label>
+				<label class="campo">Ano
+					<input type="number" name="ano" min="1900" max="2100" required>
+				</label>
+				<label class="campo">Quilometragem
+					<input type="text" name="quilometragem" placeholder="Ex.: 45.000 km" required>
+				</label>
+				<label class="campo">Preço
+					<input type="text" name="preco" placeholder="Ex.: R$ 80.000" required>
+				</label>
+				<label class="campo">Status
+					<select name="status" required>
+						<option value="Disponível">Disponível</option>
+						<option value="Reservado">Reservado</option>
+						<option value="Vendido">Vendido</option>
+					</select>
+				</label>
+			</div>
+			<button class="botao" type="submit">Enviar dados do carro</button>
+		</form>
+	</main>
+
+	<footer id="contato">Marcio Nunes Carros Usados &copy; 2024 | Atendimento: (11) 99999-9999</footer>
+
+	<script>
+		const container = document.getElementById('tabela-carros');
+
+		fetch('/api/carros')
+			.then((resposta) => {
+				if (!resposta.ok) throw new Error('Falha ao carregar carros');
+				return resposta.json();
+			})
+			.then((carros) => {
+				const tabela = document.createElement('table');
+				tabela.className = 'tabela';
+
+				const cabecalho = document.createElement('thead');
+				const linhaCabecalho = document.createElement('tr');
+				['Modelo', 'Ano', 'Quilometragem', 'Preço', 'Status', ''].forEach((titulo) => {
+					const th = document.createElement('th');
+					th.textContent = titulo;
+					linhaCabecalho.appendChild(th);
+				});
+				cabecalho.appendChild(linhaCabecalho);
+				tabela.appendChild(cabecalho);
+
+				const corpo = document.createElement('tbody');
+				carros.forEach((carro) => {
+					const linha = document.createElement('tr');
+					[carro.modelo, carro.ano, carro.quilometragem, carro.preco, carro.status].forEach((valor, indice) => {
+						const celula = document.createElement('td');
+						celula.textContent = valor;
+						if (indice === 3) celula.className = 'preco';
+						linha.appendChild(celula);
+					});
+
+					const celulaAcao = document.createElement('td');
+					const linkInteresse = document.createElement('a');
+					linkInteresse.className = 'botao';
+					linkInteresse.href = '#contato';
+					linkInteresse.textContent = 'Tenho interesse';
+					celulaAcao.appendChild(linkInteresse);
+					linha.appendChild(celulaAcao);
+					corpo.appendChild(linha);
+				});
+
+				tabela.appendChild(corpo);
+				container.replaceChildren(tabela);
+			})
+			.catch(() => {
+				container.textContent = 'Não foi possível carregar os carros.';
+			});
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+[
+  {
+    "modelo": "Honda Civic EXL",
+    "ano": 2020,
+    "quilometragem": "48.000 km",
+    "preco": "R$ 119.900",
+    "status": "Disponível"
+  },
+  {
+    "modelo": "Volkswagen T-Cross",
+    "ano": 2021,
+    "quilometragem": "37.500 km",
+    "preco": "R$ 109.900",
+    "status": "Disponível"
+  },
+  {
+    "modelo": "Chevrolet Onix LT",
+    "ano": 2022,
+    "quilometragem": "29.000 km",
+    "preco": "R$ 78.900",
+    "status": "Reservado"
+  },
+  {
+    "modelo": "Jeep Renegade Longitude",
+    "ano": 2020,
+    "quilometragem": "55.000 km",
+    "preco": "R$ 104.900",
+    "status": "Vendido"
+  },
+  {
+    "modelo": "Uno 1.6R",
+    "ano": 2027,
+    "quilometragem": "0",
+    "preco": "145.000",
+    "status": "Disponível"
+  },
+  {
+    "modelo": "Nivus Heilight",
+    "ano": 2023,
+    "quilometragem": "37.000",
+    "preco": "R$ 112.000",
+    "status": "Vendido"
+  }
+]
